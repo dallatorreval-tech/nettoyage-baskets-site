@@ -144,6 +144,173 @@
  padding: 1.5rem;
  }
  }
+        
+    /* Mode Sombre (Dark Mode) */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 1px solid #444;
+        }
+
+        .container {
+            background-color: #1a1a1a;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-bottom: 1px solid #444;
+        }
+
+        .hero-title, .hero-subtitle {
+            color: #e0e0e0;
+        }
+
+        .section {
+            background-color: #1a1a1a;
+        }
+
+        .section h2 {
+            color: #e0e0e0;
+            border-bottom-color: #555;
+        }
+
+        .service-card {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #e0e0e0;
+        }
+
+        .service-card h3 {
+            color: #fff;
+        }
+
+        .service-card p {
+            color: #b0b0b0;
+        }
+
+        .price {
+            color: #4db8ff;
+            background-color: #333;
+        }
+
+        .about {
+            background-color: #2a2a2a;
+            color: #b0b0b0;
+            border-left: 4px solid #4db8ff;
+        }
+
+        .about h3 {
+            color: #e0e0e0;
+        }
+
+        .about strong {
+            color: #fff;
+        }
+
+        .about ul li {
+            color: #b0b0b0;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-top: 1px solid #444;
+        }
+
+        .contact-info {
+            color: #b0b0b0;
+        }
+
+        .contact-info p {
+            color: #b0b0b0;
+        }
+
+        .contact-info strong {
+            color: #e0e0e0;
+        }
+
+        .contact-info a {
+            color: #4db8ff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #66d9ff;
+        }
+
+        .btn {
+            background-color: #4db8ff;
+            color: #000;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #66d9ff;
+        }
+
+        footer {
+            background-color: #1a1a1a !important;
+            border-top: 1px solid #444;
+            color: #b0b0b0 !important;
+        }
+    }
+
+    /* Mode Sombre Manuel avec Bouton Toggle */
+    body.dark-mode {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .header {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        border-bottom: 1px solid #444;
+    }
+
+    body.dark-mode .section h2 {
+        color: #e0e0e0;
+    }
+
+    body.dark-mode .service-card {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+        border: 1px solid #444;
+    }
+
+    body.dark-mode .price {
+        background-color: #333;
+        color: #4db8ff;
+    }
+
+    body.dark-mode footer {
+        background-color: #1a1a1a !important;
+        color: #b0b0b0 !important;
+        border-top: 1px solid #444;
+    }
+
+    .dark-mode-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #4db8ff;
+        color: #000;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .dark-mode-toggle:hover {
+        background-color: #66d9ff;
+    }
     </style>
 </head>
 <body>
@@ -214,5 +381,50 @@
     <footer style="text-align: center; padding: 2rem; background: #333; color: white;">
         <p>&copy; 2026 Nettoyage de Baskets Dijon - Tous droits réservés</p>
     </footer>
+    
+    <!-- Bouton Mode Sombre -->
+    <button class="dark-mode-toggle" id="darkModeBtn" title="Basculer le mode sombre">🌙</button>
+
+    <script>
+        // Mode sombre automatique basé sur les préférences système
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        const body = document.body;
+
+        // Vérifie si l'utilisateur a une préférence sauvegardée
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeBtn.textContent = '☀️';
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Active le mode sombre si le système le préfère
+            body.classList.add('dark-mode');
+            darkModeBtn.textContent = '☀️';
+        }
+
+        // Écouteur de clic sur le bouton
+        darkModeBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeBtn.textContent = '☀️';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeBtn.textContent = '🌙';
+            }
+        });
+
+        // Détecte les changements de préférence système
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (e.matches && localStorage.getItem('darkMode') !== 'disabled') {
+                    body.classList.add('dark-mode');
+                    darkModeBtn.textContent = '☀️';
+                } else if (!e.matches && localStorage.getItem('darkMode') !== 'enabled') {
+                    body.classList.remove('dark-mode');
+                    darkModeBtn.textContent = '🌙';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
