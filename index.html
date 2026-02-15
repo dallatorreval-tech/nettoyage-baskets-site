@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nettoyage de Baskets - Dijon | Service Pro & Rapide</title>
+    <!-- Font Awesome pour les logos officiels (Instagram, WhatsApp, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -457,6 +459,22 @@
             text-decoration: underline;
         }
         
+        /* Style pour le logo Instagram */
+        .contact-info .fab {
+            margin-right: 8px;
+            font-size: 1.4rem;
+            vertical-align: middle;
+            color: white;
+        }
+        
+        /* Style spécifique pour l'icône Instagram */
+        .fa-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
         .btn {
             display: inline-block;
             background: white;
@@ -780,7 +798,7 @@
         <section id="formulaire-devis" class="devis-form-section">
             <h2 style="text-align: center; color: #0B3B5C; margin-bottom: 2rem; font-size: 2rem;">Demande de devis gratuit</h2>
             <div class="devis-form">
-                <div id="successMessage" class="success-message"></div>
+                <div id="successMessage" class="success-message" style="background: #d4edda; color: #155724; padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem; text-align: center; display: none; font-size: 0.95rem;"></div>
                 <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
                     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
                     
@@ -851,8 +869,8 @@
                 <p>Pour un devis ou une prise de rendez-vous :</p>
                 <p><strong>📧 Email :</strong> <a href="mailto:meso.multiservices@gmail.com">meso.multiservices@gmail.com</a></p>
                 <p><strong>📱 WhatsApp :</strong> <a href="https://wa.me/33745171880">+33 7 45 17 18 80</a></p>
-                <!-- NOUVEAU : Instagram ajouté ici -->
-                <p><strong>📸 Instagram :</strong> <a href="https://www.instagram.com/meso.multiservices?utm_source=qr" target="_blank">@meso.multiservices</a></p>
+                <!-- LOGO INSTAGRAM OFFICIEL avec dégradé de couleurs -->
+                <p><strong><i class="fab fa-instagram"></i> Instagram :</strong> <a href="https://www.instagram.com/meso.multiservices?utm_source=qr" target="_blank">@meso.multiservices</a></p>
                 <p><strong>📍 Zone :</strong> Dijon et alentours (21)</p>
                 <a href="#formulaire-devis" class="btn">Demander un Devis Gratuit</a>
             </div>
