@@ -396,7 +396,7 @@
             color: white;
             padding: 4rem 1rem;
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 2rem;
             border-radius: 30px 30px 0 0;
             position: relative;
             overflow: hidden;
@@ -434,7 +434,6 @@
             backdrop-filter: blur(10px);
         }
         
-        /* Styles spécifiques pour les liens dans contact-info */
         .contact-info p {
             margin: 0.8rem 0;
             word-break: normal;
@@ -459,7 +458,6 @@
             text-decoration: underline;
         }
         
-        /* Style pour le logo Instagram */
         .contact-info .fab {
             margin-right: 8px;
             font-size: 1.4rem;
@@ -467,7 +465,6 @@
             color: white;
         }
         
-        /* Style spécifique pour l'icône Instagram */
         .fa-instagram {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             -webkit-background-clip: text;
@@ -475,7 +472,7 @@
             background-clip: text;
         }
 
-        /* Styles du formulaire de devis - ENHANCÉ */
+        /* Formulaire de devis */
         .devis-form-section {
             background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
             padding: 3rem 1rem;
@@ -621,23 +618,11 @@
             to { left: 100%; }
         }
 
-        /* CORRECTION POUR MOBILE */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            .header p {
-                font-size: 1.1rem;
-            }
-            .header {
-                min-height: 300px;
-            }
-            
-            .contact-info {
-                padding: 1.5rem 1rem;
-                font-size: 1.1rem;
-            }
-            
+            .header h1 { font-size: 2.2rem; }
+            .header p { font-size: 1.1rem; }
+            .header { min-height: 300px; }
+            .contact-info { padding: 1.5rem 1rem; font-size: 1.1rem; }
             .contact-info p {
                 display: flex;
                 flex-wrap: wrap;
@@ -647,40 +632,204 @@
                 margin: 0.6rem 0;
                 text-align: center;
             }
-            
-            .contact-info strong {
-                display: inline-block;
-                white-space: nowrap;
-            }
-            
-            .contact-info a {
-                display: inline-block;
-                white-space: nowrap;
-                max-width: 100%;
-            }
-            
-            .contact-info p:nth-of-type(2) {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.2rem;
-            }
-            
-            .contact-info p:nth-of-type(3) {
-                flex-wrap: wrap;
-            }
+            .contact-info strong { display: inline-block; white-space: nowrap; }
+            .contact-info a { display: inline-block; white-space: nowrap; max-width: 100%; }
+            .contact-info p:nth-of-type(2) { flex-direction: column; align-items: center; gap: 0.2rem; }
+            .contact-info p:nth-of-type(3) { flex-wrap: wrap; }
         }
-
         @media (max-width: 380px) {
             .contact-info p {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.2rem;
             }
-            
-            .contact-info strong {
-                margin-right: 0;
+            .contact-info strong { margin-right: 0; }
+        }
+
+        /* ===== PETITES BULLES D'AVIS QUI DÉFILENT ===== */
+        .bubbles-testimonials {
+            background: transparent;
+            padding: 2rem 0 1.5rem 0;
+            margin: 1rem 0 0 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        
+        .bubbles-testimonials h3 {
+            text-align: center;
+            color: #0B3B5C;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .bubbles-testimonials h3 i {
+            color: #4CB5E0;
+            font-size: 1.6rem;
+        }
+
+        .bubbles-track {
+            display: flex;
+            gap: 1rem;
+            animation: scrollBubbles 25s linear infinite;
+            width: fit-content;
+            padding: 0.5rem 0;
+        }
+
+        .bubbles-track:hover {
+            animation-play-state: paused;
+        }
+
+        .bubble-review {
+            flex: 0 0 auto;
+            width: 210px; /* Taille des bulles */
+            background: white;
+            border-radius: 60px 60px 60px 20px; /* Forme de bulle */
+            padding: 0.8rem 1.2rem 0.8rem 1rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07), 0 0 0 2px rgba(76, 181, 224, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid rgba(76, 181, 224, 0.3);
+            transition: all 0.2s;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .bubble-review:hover {
+            transform: scale(1.02);
+            border-color: #4CB5E0;
+            box-shadow: 0 8px 18px rgba(76, 181, 224, 0.25);
+            background: white;
+        }
+
+        /* Petit avatar rond dans la bulle */
+        .bubble-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(145deg, #0B3B5C, #4CB5E0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .bubble-content {
+            flex: 1;
+            min-width: 0; /* pour que le texte s'écoule */
+        }
+
+        .bubble-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0.1rem;
+        }
+
+        .bubble-name {
+            font-weight: 700;
+            color: #0B3B5C;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .bubble-stars {
+            color: #f4b400;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .bubble-text {
+            font-size: 0.75rem;
+            line-height: 1.2;
+            color: #444;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0.1rem 0 0.1rem 0;
+            max-height: 2.4em;
+        }
+
+        .bubble-service {
+            display: inline-block;
+            background: #e5f0f9;
+            padding: 0.1rem 0.5rem;
+            border-radius: 30px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #0B3B5C;
+            margin-top: 0.1rem;
+            white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Animation de défilement */
+        @keyframes scrollBubbles {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 0.5rem)); } /* La moitié de la largeur totale (car dupliqué) */
+        }
+
+        /* Badge note globale */
+        .global-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.7);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(76, 181, 224, 0.2);
+        }
+
+        .global-rating i {
+            color: #4285F4;
+        }
+
+        .global-rating .stars {
+            color: #f4b400;
+            font-weight: 600;
+        }
+
+        /* Ajustement pour mobile : bulles plus petites */
+        @media (max-width: 640px) {
+            .bubble-review {
+                width: 180px;
+                padding: 0.6rem 0.8rem;
+            }
+            .bubble-avatar {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+            .bubble-name {
+                font-size: 0.75rem;
+            }
+            .bubble-text {
+                font-size: 0.65rem;
             }
         }
+        /* ===== FIN BULLES ===== */
     </style>
 </head>
 <body>
@@ -819,6 +968,203 @@
         </section>
     </div>
 
+    <!-- PETITES BULLES D'AVIS QUI DÉFILENT (comme demandé) -->
+    <section class="bubbles-testimonials">
+        <h3>
+            <i class="fas fa-comment-dots"></i> Ils en parlent mieux que nous
+        </h3>
+        
+        <div class="bubbles-track">
+            <!-- PREMIÈRE SÉRIE DE BULLES (8) -->
+            <div class="bubble-review">
+                <div class="bubble-avatar">T</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Thomas</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Jordan comme neuves, incroyable !</div>
+                    <span class="bubble-service">Rénovation</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">S</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Sarah</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Yeezy impeccables, taches parties</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">J</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Jordan</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Express 24h, Air Max nickels</div>
+                    <span class="bubble-service">Express</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">C</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Camille</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Dunk Low parfaites, pro à l'écoute</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">A</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Antoine</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Enfin un pro à Dijon, top !</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">L</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Lucas</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Toutes mes paires ici, jamais déçu</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">E</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Emma</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Adidas Samba comme au premier jour</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">M</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Maxime</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Blanchiment semelles impressionnant</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+            
+            <!-- DUPLICATA POUR L'EFFET INFINI (même ordre) -->
+            <div class="bubble-review">
+                <div class="bubble-avatar">T</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Thomas</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Jordan comme neuves, incroyable !</div>
+                    <span class="bubble-service">Rénovation</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">S</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Sarah</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Yeezy impeccables, taches parties</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">J</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Jordan</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Express 24h, Air Max nickels</div>
+                    <span class="bubble-service">Express</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">C</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Camille</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Dunk Low parfaites, pro à l'écoute</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">A</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Antoine</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Enfin un pro à Dijon, top !</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">L</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Lucas</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Toutes mes paires ici, jamais déçu</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">E</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Emma</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Adidas Samba comme au premier jour</div>
+                    <span class="bubble-service">Classique</span>
+                </div>
+            </div>
+            <div class="bubble-review">
+                <div class="bubble-avatar">M</div>
+                <div class="bubble-content">
+                    <div class="bubble-header">
+                        <span class="bubble-name">Maxime</span>
+                        <span class="bubble-stars">★★★★★</span>
+                    </div>
+                    <div class="bubble-text">Blanchiment semelles impressionnant</div>
+                    <span class="bubble-service">Premium</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini note globale -->
+        <div class="global-rating">
+            <i class="fab fa-google"></i>
+            <span class="stars">★★★★★</span>
+            <span>4.9 · 158 avis</span>
+        </div>
+    </section>
+
+    <!-- Bloc contact (après les bulles) -->
     <div class="contact">
         <div class="container">
             <h2>Contactez-nous</h2>
@@ -826,10 +1172,8 @@
                 <p>Pour un devis ou une prise de rendez-vous :</p>
                 <p><strong>📧 Email :</strong> <a href="mailto:meso.multiservices@gmail.com">meso.multiservices@gmail.com</a></p>
                 <p><strong>📱 WhatsApp :</strong> <a href="https://wa.me/33745171880">+33 7 45 17 18 80</a></p>
-                <!-- LOGO INSTAGRAM OFFICIEL avec dégradé de couleurs -->
                 <p><strong><i class="fab fa-instagram"></i> Instagram :</strong> <a href="https://www.instagram.com/meso.multiservices?utm_source=qr" target="_blank">@meso.multiservices</a></p>
                 <p><strong>📍 Zone :</strong> Dijon et alentours (21)</p>
-                <!-- BOUTON SUPPRIMÉ -->
             </div>
         </div>
     </div>
@@ -842,26 +1186,20 @@
         function selectService(serviceName) {
             const select = document.getElementById('service');
             const selectedServiceSpan = document.getElementById('selected-service');
-            
             for (let option of select.options) {
                 if (option.text.includes(serviceName)) {
                     option.selected = true;
                     break;
                 }
             }
-            
             selectedServiceSpan.textContent = serviceName;
             selectedServiceSpan.style.display = 'inline-block';
-            
-            document.getElementById('formulaire-devis').scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+            document.getElementById('formulaire-devis').scrollIntoView({ behavior: 'smooth' });
         }
 
         document.getElementById('service').addEventListener('change', function() {
             const selectedOption = this.options[this.selectedIndex];
             const selectedServiceSpan = document.getElementById('selected-service');
-            
             if (this.value) {
                 const serviceName = selectedOption.text.split(' - ')[0];
                 selectedServiceSpan.textContent = serviceName;
@@ -886,7 +1224,6 @@
             const successMessage = document.getElementById('successMessage');
             successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
             successMessage.style.display = 'block';
-            
             setTimeout(() => {
                 successMessage.scrollIntoView({ behavior: 'smooth' });
             }, 100);
