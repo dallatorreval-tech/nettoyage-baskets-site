@@ -543,7 +543,7 @@
             animation: scrollVertical 22s linear infinite reverse; /* Sens inverse pour varier */
         }
         
-        /* Animation de défilement vertical */
+        /* Animation de défilement vertical (PC - vitesse normale) */
         @keyframes scrollVertical {
             0% { transform: translateY(0); }
             100% { transform: translateY(calc(-50% - 0.5rem)); } /* Moitié de la hauteur (car dupliqué) */
@@ -650,7 +650,7 @@
             margin: 0 1rem;
         }
         
-        /* Responsive : sur mobile, les bulles disparaissent ou passent en haut/bas */
+        /* ===== VERSION MOBILE : BULLES PLUS RAPIDES (sans affecter PC) ===== */
         @media (max-width: 900px) {
             .devis-with-bubbles {
                 flex-wrap: wrap;
@@ -658,20 +658,23 @@
             .bubbles-column {
                 flex: 0 0 100%;
                 height: auto;
-                max-height: 200px;
+                max-height: 180px; /* Hauteur réduite pour mobile */
                 flex-direction: row;
-                overflow-x: auto;
+                overflow-x: hidden; /* Caché car on utilise le défilement horizontal */
                 mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
                 -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+                margin: 0.5rem 0;
             }
             .bubbles-column.left, .bubbles-column.right {
                 align-items: center;
             }
             .bubbles-track-vertical {
                 flex-direction: row;
-                animation: scrollHorizontal 25s linear infinite;
+                /* Animation plus rapide pour mobile : 8s au lieu de 20s */
+                animation: scrollHorizontalMobile 8s linear infinite;
             }
-            @keyframes scrollHorizontal {
+            /* Animation mobile plus rapide */
+            @keyframes scrollHorizontalMobile {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(calc(-50% - 0.5rem)); }
             }
