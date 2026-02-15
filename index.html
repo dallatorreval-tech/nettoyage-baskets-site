@@ -143,38 +143,39 @@
             transform: scale(1.05);
         }
 
-        /* Styles du formulaire de devis */
+        /* Styles du formulaire de devis - VERSION COMPACTE (textes inchangés) */
         .devis-form-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             border-radius: 10px;
-            margin: 3rem 0;
+            margin: 2rem 0;
         }
         .devis-form {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
         }
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
             color: #333;
+            font-size: 0.95rem;
         }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 0.5rem 0.7rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.95rem;
             transition: border-color 0.3s;
         }
         .form-group input:focus,
@@ -185,24 +186,25 @@
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.8rem;
         }
         .btn-submit {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
+            border-radius: 4px;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             transition: transform 0.3s;
+            margin-top: 0.5rem;
         }
         .btn-submit:hover {
             transform: scale(1.02);
@@ -211,25 +213,43 @@
             display: inline-block;
             background: #667eea;
             color: white;
-            padding: 0.3rem 0.8rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin-left: 0.5rem;
         }
         #selected-service {
             font-weight: bold;
             color: #667eea;
+            font-size: 0.9rem;
         }
 
         /* Message de succès */
         .success-message {
             background: #d4edda;
             color: #155724;
-            padding: 1rem;
-            border-radius: 5px;
+            padding: 0.8rem;
+            border-radius: 4px;
             margin-bottom: 1rem;
             text-align: center;
             display: none;
+            font-size: 0.95rem;
+        }
+
+        /* Titre du formulaire */
+        .devis-form-section h2 {
+            color: #667eea;
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        /* Petit texte d'info */
+        .form-footnote {
+            text-align: center;
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            color: #666;
         }
 
         @media (max-width: 768px) {
@@ -264,9 +284,16 @@
             }
             .form-row {
                 grid-template-columns: 1fr;
+                gap: 0.8rem;
             }
             .devis-form {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+            .devis-form-section {
+                padding: 1.5rem 1rem;
+            }
+            .devis-form-section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -320,9 +347,9 @@
             </div>
         </section>
 
-        <!-- Formulaire de devis avec votre endpoint Formspree -->
+        <!-- Formulaire de devis - VERSION COMPACTE (textes identiques) -->
         <section id="formulaire-devis" class="devis-form-section">
-            <h2 style="text-align: center; color: #667eea; margin-bottom: 2rem;">Demande de devis gratuit</h2>
+            <h2>Demande de devis gratuit</h2>
             <div class="devis-form">
                 <div id="successMessage" class="success-message"></div>
                 <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
@@ -382,9 +409,7 @@
 
                     <button type="submit" class="btn-submit">Envoyer ma demande de devis</button>
                 </form>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    * Champs obligatoires • Réponse sous 24h maximum
-                </p>
+                <p class="form-footnote">* Champs obligatoires • Réponse sous 24h maximum</p>
             </div>
         </section>
     </div>
@@ -456,9 +481,6 @@
             const submitBtn = this.querySelector('button[type="submit"]');
             submitBtn.textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
-            
-            // Le formulaire continue son envoi normal vers Formspree
-            // Formspree redirigera vers une page de confirmation
         });
 
         // Vérifier si le formulaire a été soumis avec succès (paramètre dans l'URL)
@@ -467,7 +489,6 @@
             successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
             successMessage.style.display = 'block';
             
-            // Faire défiler jusqu'au message
             setTimeout(() => {
                 successMessage.scrollIntoView({ behavior: 'smooth' });
             }, 100);
