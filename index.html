@@ -817,7 +817,11 @@
                 </div>
                 
                 <form id="devisForm" action="https://getform.io/f/s4dtmkwbby7" method="POST" enctype="multipart/form-data">
+                    <!-- Honeypot pour anti-spam -->
                     <input type="hidden" name="_gotcha" style="display:none !important">
+                    
+                    <!-- Redirection après soumission (optionnel mais recommandé) -->
+                    <input type="hidden" name="_redirect" value="https://votresite.com/merci.html">
                     
                     <div class="form-group">
                         <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
@@ -863,7 +867,7 @@
 
                     <div class="form-group">
                         <label for="photos">📸 Photos de vos baskets</label>
-                        <input type="file" id="photos" name="photos" accept="image/*" multiple>
+                        <input type="file" id="photos" name="photos" accept="image/jpeg,image/png,image/jpg" multiple>
                         <div class="file-hint">
                             <i class="fas fa-info-circle"></i>
                             <span>Vous pouvez sélectionner plusieurs photos (JPEG, PNG) - Max 10Mo par photo</span>
@@ -906,6 +910,7 @@
     </footer>
 
     <script>
+        // Fonction pour sélectionner un service depuis les cartes
         function selectService(serviceName) {
             const select = document.getElementById('service');
             const selectedServiceSpan = document.getElementById('selected-service');
@@ -920,11 +925,13 @@
             selectedServiceSpan.textContent = serviceName;
             selectedServiceSpan.style.display = 'inline-block';
             
+            // Scroll vers le formulaire
             document.getElementById('formulaire-devis').scrollIntoView({ 
                 behavior: 'smooth' 
             });
         }
 
+        // Mettre à jour le badge quand on change le select
         document.getElementById('service').addEventListener('change', function() {
             const selectedOption = this.options[this.selectedIndex];
             const selectedServiceSpan = document.getElementById('selected-service');
@@ -939,10 +946,12 @@
             }
         });
 
+        // Validation téléphone : uniquement chiffres et +
         document.getElementById('telephone').addEventListener('input', function(e) {
             this.value = this.value.replace(/[^0-9+]/g, '');
         });
 
+        // Gestion de la soumission du formulaire
         document.getElementById('devisForm').addEventListener('submit', async function(e) {
             e.preventDefault(); // Empêche l'envoi normal du formulaire
             
@@ -963,7 +972,14 @@
                 // Créer un FormData avec les données du formulaire
                 const formData = new FormData(this);
                 
-                // Envoyer à Getform
+                // Afficher la taille des fichiers dans la console (debug)
+                const photos = document.getElementById('photos').files;
+                console.log('Nombre de photos:', photos.length);
+                for (let i = 0; i < photos.length; i++) {
+                    console.log(`Photo ${i+1}: ${photos[i].name} (${(photos[i].size / 1024).toFixed(2)} KB)`);
+                }
+                
+                // Envoyer à Getform avec fetch
                 const response = await fetch('https://getform.io/f/s4dtmkwbby7', {
                     method: 'POST',
                     body: formData
@@ -984,7 +1000,7 @@
                 }
             } catch (error) {
                 // Afficher l'erreur
-                console.error('Erreur:', error);
+                console.error('Erreur détaillée:', error);
                 errorMsg.style.display = 'block';
                 errorMsg.scrollIntoView({ behavior: 'smooth' });
             } finally {
@@ -992,6 +1008,31 @@
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
+        });
+
+        // Afficher un avertissement si les photos sont trop volumineuses
+        document.getElementById('photos').addEventListener('change', function(e) {
+            const files = this.files;
+            const maxSize = 10 * 1024 * 1024; // 10 Mo
+            let totalSize = 0;
+            let tooLarge = [];
+            
+            for (let i = 0; i < files.length; i++) {
+                totalSize += files[i].size;
+                if (files[i].size > maxSize) {
+                    tooLarge.push(files[i].name);
+                }
+            }
+            
+            if (tooLarge.length > 0) {
+                alert(`Attention: Les photos suivantes dépassent 10 Mo et pourraient ne pas être envoyées correctement:\n${tooLarge.join('\n')}\n\nVeuillez les compresser avant de continuer.`);
+            }
+            
+            if (totalSize > 50 * 1024 * 1024) {
+                alert('Attention: Le total des photos dépasse 50 Mo. Cela peut ralentir l\'envoi. Essayez de réduire la taille des images.');
+            }
+            
+            console.log('Taille totale des photos:', (totalSize / (1024 * 1024)).toFixed(2), 'Mo');
         });
     </script>
 </body>
