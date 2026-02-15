@@ -221,6 +221,17 @@
             color: #667eea;
         }
 
+        /* Message de succès */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -313,7 +324,13 @@
         <section id="formulaire-devis" class="devis-form-section">
             <h2 style="text-align: center; color: #667eea; margin-bottom: 2rem;">Demande de devis gratuit</h2>
             <div class="devis-form">
-                <form id="devisForm" onsubmit="return submitDevis(event)">
+                <div id="successMessage" class="success-message"></div>
+                <form id="devisForm" action="https://formspree.io/f/mzzdgrdj" method="POST">
+                    <!-- Champ caché pour l'email de destination -->
+                    <input type="hidden" name="_to" value="meso.multiservices@gmail.com">
+                    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
+                    <input type="hidden" name="_replyto" value="meso.multiservices@gmail.com">
+                    
                     <div class="form-group">
                         <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
                         <select id="service" name="service" required>
@@ -338,7 +355,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                            <input type="email" id="email" name="_replyto" required placeholder="votre@email.com">
                         </div>
                         <div class="form-group">
                             <label for="telephone">Téléphone *</label>
@@ -415,42 +432,6 @@
             });
         }
 
-        // Fonction de soumission du formulaire
-        function submitDevis(event) {
-            event.preventDefault();
-            
-            // Récupérer les valeurs du formulaire
-            const formData = {
-                service: document.getElementById('service').value,
-                nom: document.getElementById('nom').value,
-                prenom: document.getElementById('prenom').value,
-                email: document.getElementById('email').value,
-                telephone: document.getElementById('telephone').value,
-                marque: document.getElementById('marque').value,
-                message: document.getElementById('message').value,
-                urgence: document.getElementById('urgence').value
-            };
-
-            // Validation simple
-            if (!formData.service || !formData.nom || !formData.prenom || !formData.email || !formData.telephone || !formData.message) {
-                alert('Veuillez remplir tous les champs obligatoires.');
-                return false;
-            }
-
-            // Ici vous pouvez ajouter l'envoi vers votre backend
-            // Pour l'exemple, on simule un envoi réussi
-            console.log('Formulaire soumis :', formData);
-            
-            // Message de confirmation
-            alert('Merci pour votre demande de devis ! Nous vous répondrons dans les plus brefs délais.');
-            
-            // Réinitialiser le formulaire
-            document.getElementById('devisForm').reset();
-            document.getElementById('selected-service').textContent = '';
-            
-            return false;
-        }
-
         // Mettre à jour le badge quand l'utilisateur change manuellement le service
         document.getElementById('service').addEventListener('change', function() {
             const selectedOption = this.options[this.selectedIndex];
@@ -470,6 +451,90 @@
         document.getElementById('telephone').addEventListener('input', function(e) {
             this.value = this.value.replace(/[^0-9+]/g, '');
         });
+
+        // Gestion de la soumission du formulaire avec Formspree
+        document.getElementById('devisForm').addEventListener('submit', function(e) {
+            // Pas de e.preventDefault() car on veut que Formspree gère l'envoi
+            
+            // Afficher un message de chargement
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            // Le formulaire est envoyé normalement à Formspree
+            // Formspree redirigera vers une page de confirmation
+        });
+
+        // Vérifier si le formulaire a été soumis avec succès (paramètre dans l'URL)
+        if (window.location.search.includes('success=true')) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
+            successMessage.style.display = 'block';
+            
+            // Faire défiler jusqu'au message
+            setTimeout(() => {
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
     </script>
+
+    <!-- Alternative avec EmailJS (si vous préférez un envoi sans redirection) -->
+    <!-- Décommentez cette section si vous voulez utiliser EmailJS à la place de Formspree
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("VOTRE_USER_ID_EMAILJS"); // Remplacez par votre USER ID EmailJS
+        })();
+
+        document.getElementById('devisForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            // Récupérer les données du formulaire
+            const formData = {
+                service: document.getElementById('service').value,
+                nom: document.getElementById('nom').value,
+                prenom: document.getElementById('prenom').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value,
+                marque: document.getElementById('marque').value,
+                message: document.getElementById('message').value,
+                urgence: document.getElementById('urgence').value,
+                to_email: 'meso.multiservices@gmail.com'
+            };
+
+            // Envoyer l'email via EmailJS
+            emailjs.send('service_id', 'template_id', formData)
+                .then(function() {
+                    // Succès
+                    document.getElementById('devisForm').reset();
+                    document.getElementById('selected-service').textContent = '';
+                    
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
+                    successMessage.style.display = 'block';
+                    
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    
+                    setTimeout(() => {
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }, function(error) {
+                    // Erreur
+                    alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.');
+                    console.error('Erreur:', error);
+                    
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+    -->
 </body>
 </html>
