@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nettoyage de Baskets - Dijon | Service Pro & Rapide</title>
-    <!-- Font Awesome pour les logos officiels (Instagram, WhatsApp, etc.) -->
+    <!-- Font Awesome pour les logos officiels -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -34,7 +34,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
-        /* ANIMATION DE MOUSSE QUI TOMBE */
         .header .foam {
             position: absolute;
             top: 0;
@@ -51,7 +50,6 @@
             100% { transform: translateY(-50px) rotate(5deg); }
         }
         
-        /* ÉCLABOUSSURES D'EAU */
         .header .splash {
             position: absolute;
             bottom: 0;
@@ -69,7 +67,6 @@
             50% { transform: scaleY(1.2); opacity: 0.5; }
         }
         
-        /* BRILLANCE ET PROPRETÉ */
         .header .shine {
             position: absolute;
             top: -50%;
@@ -87,7 +84,6 @@
             100% { transform: rotate(360deg); opacity: 0; }
         }
         
-        /* GOUTTES D'EAU QUI COULENT */
         .header .droplet {
             position: absolute;
             background: rgba(255,255,255,0.4);
@@ -110,7 +106,6 @@
             100% { top: 100%; opacity: 0; }
         }
         
-        /* SILHOUETTES DE BASKETS EN ARRIÈRE-PLAN */
         .header .sneaker-bg {
             position: absolute;
             opacity: 0.1;
@@ -134,7 +129,6 @@
             50% { transform: rotate(-15deg) translateY(-20px); }
         }
         
-        /* TITRE PRINCIPAL AVEC EFFET BRILLANT */
         .header h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -175,7 +169,6 @@
             50% { box-shadow: 0 0 30px rgba(255,255,215,0.6); }
         }
         
-        /* BROSSE DE NETTOYAGE ANIMÉE */
         .header .brush {
             position: absolute;
             left: 5%;
@@ -192,7 +185,6 @@
             50% { transform: rotate(-20deg) translateX(20px); }
         }
         
-        /* BULLES DE SAVON QUI MONTENT */
         .header .bubble {
             position: absolute;
             background: rgba(255,255,255,0.3);
@@ -472,7 +464,7 @@
             background-clip: text;
         }
 
-        /* Formulaire de devis */
+        /* Formulaire de devis - avec conteneur flexible pour les bulles */
         .devis-form-section {
             background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
             padding: 3rem 1rem;
@@ -502,17 +494,192 @@
             transform: rotate(15deg);
         }
         
-        .devis-form {
-            max-width: 500px;
+        /* Layout principal : trois colonnes (bulles gauche / formulaire / bulles droite) */
+        .devis-with-bubbles {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .bubbles-column {
+            flex: 0 0 180px; /* Largeur fixe pour les colonnes de bulles */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: 500px; /* Hauteur fixe pour le défilement */
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        }
+        
+        .bubbles-column.left {
+            align-items: flex-end; /* Alignement à droite pour la colonne gauche */
+        }
+        
+        .bubbles-column.right {
+            align-items: flex-start; /* Alignement à gauche pour la colonne droite */
+        }
+        
+        .bubbles-track-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: scrollVertical 20s linear infinite;
+            width: fit-content;
+            will-change: transform;
+        }
+        
+        .bubbles-column.left .bubbles-track-vertical {
+            animation: scrollVertical 20s linear infinite;
+        }
+        
+        .bubbles-column.right .bubbles-track-vertical {
+            animation: scrollVertical 22s linear infinite reverse; /* Sens inverse pour varier */
+        }
+        
+        /* Animation de défilement vertical */
+        @keyframes scrollVertical {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(calc(-50% - 0.5rem)); } /* Moitié de la hauteur (car dupliqué) */
+        }
+        
+        /* Style des bulles */
+        .bubble-review {
+            width: 160px;
+            background: white;
+            border-radius: 60px 60px 60px 20px;
+            padding: 0.7rem 1rem 0.7rem 0.9rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07), 0 0 0 2px rgba(76, 181, 224, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(76, 181, 224, 0.3);
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.98);
+            flex-shrink: 0;
+        }
+        
+        .bubble-review:hover {
+            transform: scale(1.02);
+            border-color: #4CB5E0;
+            box-shadow: 0 8px 18px rgba(76, 181, 224, 0.25);
+        }
+        
+        .bubble-avatar {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(145deg, #0B3B5C, #4CB5E0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .bubble-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .bubble-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0.1rem;
+        }
+        
+        .bubble-name {
+            font-weight: 700;
+            color: #0B3B5C;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        .bubble-stars {
+            color: #f4b400;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        .bubble-text {
+            font-size: 0.7rem;
+            line-height: 1.2;
+            color: #444;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0.1rem 0;
+        }
+        
+        .bubble-service {
+            display: inline-block;
+            background: #e5f0f9;
+            padding: 0.1rem 0.5rem;
+            border-radius: 30px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: #0B3B5C;
+            white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* Formulaire centré */
+        .devis-form {
+            width: 500px;
             background: rgba(255,255,255,0.95);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(11, 59, 92, 0.2);
             border: 1px solid rgba(255,255,255,0.5);
             backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 10;
+            margin: 0 1rem;
+        }
+        
+        /* Responsive : sur mobile, les bulles disparaissent ou passent en haut/bas */
+        @media (max-width: 900px) {
+            .devis-with-bubbles {
+                flex-wrap: wrap;
+            }
+            .bubbles-column {
+                flex: 0 0 100%;
+                height: auto;
+                max-height: 200px;
+                flex-direction: row;
+                overflow-x: auto;
+                mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            }
+            .bubbles-column.left, .bubbles-column.right {
+                align-items: center;
+            }
+            .bubbles-track-vertical {
+                flex-direction: row;
+                animation: scrollHorizontal 25s linear infinite;
+            }
+            @keyframes scrollHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-50% - 0.5rem)); }
+            }
+            .devis-form {
+                width: 100%;
+                max-width: 500px;
+                margin: 1rem auto;
+            }
         }
         
         .form-group {
@@ -595,6 +762,32 @@
             font-size: 0.8rem;
             margin-left: 0.5rem;
         }
+        
+        .global-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.7);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(76, 181, 224, 0.2);
+        }
+        
+        .global-rating i {
+            color: #4285F4;
+        }
+        
+        .global-rating .stars {
+            color: #f4b400;
+            font-weight: 600;
+        }
 
         footer {
             background: #0B3B5C !important;
@@ -617,219 +810,6 @@
             from { left: -50px; }
             to { left: 100%; }
         }
-
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.2rem; }
-            .header p { font-size: 1.1rem; }
-            .header { min-height: 300px; }
-            .contact-info { padding: 1.5rem 1rem; font-size: 1.1rem; }
-            .contact-info p {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: baseline;
-                justify-content: center;
-                gap: 0.3rem;
-                margin: 0.6rem 0;
-                text-align: center;
-            }
-            .contact-info strong { display: inline-block; white-space: nowrap; }
-            .contact-info a { display: inline-block; white-space: nowrap; max-width: 100%; }
-            .contact-info p:nth-of-type(2) { flex-direction: column; align-items: center; gap: 0.2rem; }
-            .contact-info p:nth-of-type(3) { flex-wrap: wrap; }
-        }
-        @media (max-width: 380px) {
-            .contact-info p {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.2rem;
-            }
-            .contact-info strong { margin-right: 0; }
-        }
-
-        /* ===== PETITES BULLES D'AVIS QUI DÉFILENT ===== */
-        .bubbles-testimonials {
-            background: transparent;
-            padding: 2rem 0 1.5rem 0;
-            margin: 1rem 0 0 0;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-        
-        .bubbles-testimonials h3 {
-            text-align: center;
-            color: #0B3B5C;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .bubbles-testimonials h3 i {
-            color: #4CB5E0;
-            font-size: 1.6rem;
-        }
-
-        .bubbles-track {
-            display: flex;
-            gap: 1rem;
-            animation: scrollBubbles 25s linear infinite;
-            width: fit-content;
-            padding: 0.5rem 0;
-        }
-
-        .bubbles-track:hover {
-            animation-play-state: paused;
-        }
-
-        .bubble-review {
-            flex: 0 0 auto;
-            width: 210px; /* Taille des bulles */
-            background: white;
-            border-radius: 60px 60px 60px 20px; /* Forme de bulle */
-            padding: 0.8rem 1.2rem 0.8rem 1rem;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.07), 0 0 0 2px rgba(76, 181, 224, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            border: 1px solid rgba(76, 181, 224, 0.3);
-            transition: all 0.2s;
-            backdrop-filter: blur(2px);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .bubble-review:hover {
-            transform: scale(1.02);
-            border-color: #4CB5E0;
-            box-shadow: 0 8px 18px rgba(76, 181, 224, 0.25);
-            background: white;
-        }
-
-        /* Petit avatar rond dans la bulle */
-        .bubble-avatar {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(145deg, #0B3B5C, #4CB5E0);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1rem;
-            flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .bubble-content {
-            flex: 1;
-            min-width: 0; /* pour que le texte s'écoule */
-        }
-
-        .bubble-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 0.1rem;
-        }
-
-        .bubble-name {
-            font-weight: 700;
-            color: #0B3B5C;
-            font-size: 0.85rem;
-            white-space: nowrap;
-        }
-
-        .bubble-stars {
-            color: #f4b400;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-
-        .bubble-text {
-            font-size: 0.75rem;
-            line-height: 1.2;
-            color: #444;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin: 0.1rem 0 0.1rem 0;
-            max-height: 2.4em;
-        }
-
-        .bubble-service {
-            display: inline-block;
-            background: #e5f0f9;
-            padding: 0.1rem 0.5rem;
-            border-radius: 30px;
-            font-size: 0.6rem;
-            font-weight: 600;
-            color: #0B3B5C;
-            margin-top: 0.1rem;
-            white-space: nowrap;
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Animation de défilement */
-        @keyframes scrollBubbles {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 0.5rem)); } /* La moitié de la largeur totale (car dupliqué) */
-        }
-
-        /* Badge note globale */
-        .global-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.7);
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(76, 181, 224, 0.2);
-        }
-
-        .global-rating i {
-            color: #4285F4;
-        }
-
-        .global-rating .stars {
-            color: #f4b400;
-            font-weight: 600;
-        }
-
-        /* Ajustement pour mobile : bulles plus petites */
-        @media (max-width: 640px) {
-            .bubble-review {
-                width: 180px;
-                padding: 0.6rem 0.8rem;
-            }
-            .bubble-avatar {
-                width: 30px;
-                height: 30px;
-                font-size: 0.85rem;
-            }
-            .bubble-name {
-                font-size: 0.75rem;
-            }
-            .bubble-text {
-                font-size: 0.65rem;
-            }
-        }
-        /* ===== FIN BULLES ===== */
     </style>
 </head>
 <body>
@@ -900,271 +880,126 @@
             </div>
         </section>
 
-        <!-- Formulaire de devis -->
+        <!-- Formulaire de devis avec bulles de chaque côté -->
         <section id="formulaire-devis" class="devis-form-section">
             <h2 style="text-align: center; color: #0B3B5C; margin-bottom: 2rem; font-size: 2rem;">Demande de devis gratuit</h2>
-            <div class="devis-form">
-                <div id="successMessage" class="success-message" style="background: #d4edda; color: #155724; padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem; text-align: center; display: none; font-size: 0.95rem;"></div>
-                <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
-                    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
-                    
-                    <div class="form-group">
-                        <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
-                        <select id="service" name="service" required>
-                            <option value="">Sélectionnez un service</option>
-                            <option value="Nettoyage Classique">Nettoyage Classique - À partir de 15€</option>
-                            <option value="Rénovation Premium">Rénovation Premium - À partir de 25€</option>
-                            <option value="Nettoyage Express">Nettoyage Express - À partir de 20€</option>
-                        </select>
+            
+            <div class="devis-with-bubbles">
+                <!-- Colonne gauche avec bulles qui défilent -->
+                <div class="bubbles-column left">
+                    <div class="bubbles-track-vertical">
+                        <!-- Série 1 -->
+                        <div class="bubble-review"><div class="bubble-avatar">T</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Thomas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jordan comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">S</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Sarah</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Yeezy impeccables</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">J</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Jordan</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Express 24h, top</div><span class="bubble-service">Express</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Camille</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Dunk Low parfaites</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">A</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Antoine</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Enfin un pro à Dijon</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Lucas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jamais déçu</div><span class="bubble-service">Premium</span></div></div>
+                        <!-- Duplicata pour l'effet infini -->
+                        <div class="bubble-review"><div class="bubble-avatar">T</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Thomas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jordan comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">S</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Sarah</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Yeezy impeccables</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">J</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Jordan</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Express 24h, top</div><span class="bubble-service">Express</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Camille</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Dunk Low parfaites</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">A</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Antoine</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Enfin un pro à Dijon</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Lucas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jamais déçu</div><span class="bubble-service">Premium</span></div></div>
                     </div>
+                </div>
 
-                    <div class="form-row">
+                <!-- Formulaire centré -->
+                <div class="devis-form">
+                    <div id="successMessage" class="success-message" style="background: #d4edda; color: #155724; padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem; text-align: center; display: none; font-size: 0.95rem;"></div>
+                    <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
+                        <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
+                        
                         <div class="form-group">
-                            <label for="nom">Nom complet *</label>
-                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                            <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
+                            <select id="service" name="service" required>
+                                <option value="">Sélectionnez un service</option>
+                                <option value="Nettoyage Classique">Nettoyage Classique - À partir de 15€</option>
+                                <option value="Rénovation Premium">Rénovation Premium - À partir de 25€</option>
+                                <option value="Nettoyage Express">Nettoyage Express - À partir de 20€</option>
+                            </select>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="_replyto" required placeholder="votre@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone *</label>
+                                <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label for="prenom">Prénom *</label>
-                            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                            <label for="marque">Marque des baskets</label>
+                            <input type="text" id="marque" name="marque" placeholder="Ex: Nike, Adidas...">
                         </div>
-                    </div>
 
-                    <div class="form-row">
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="votre@email.com">
+                            <label for="message">Description *</label>
+                            <textarea id="message" name="message" required placeholder="Décrivez vos besoins..."></textarea>
                         </div>
+
                         <div class="form-group">
-                            <label for="telephone">Téléphone *</label>
-                            <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                            <label for="urgence">Niveau d'urgence</label>
+                            <select id="urgence" name="urgence">
+                                <option value="normal">Normal (3-5 jours)</option>
+                                <option value="rapide">Rapide (24-48h) +5€</option>
+                                <option value="express">Express (24h) +10€</option>
+                            </select>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="marque">Marque des baskets</label>
-                        <input type="text" id="marque" name="marque" placeholder="Ex: Nike, Adidas, Jordan...">
-                    </div>
+                        <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                        * Champs obligatoires • Réponse sous 24h
+                    </p>
+                </div>
 
-                    <div class="form-group">
-                        <label for="message">Description du service souhaité *</label>
-                        <textarea id="message" name="message" required placeholder="Décrivez vos besoins (nombre de paires, type de nettoyage, urgence...)"></textarea>
+                <!-- Colonne droite avec bulles qui défilent (sens inverse) -->
+                <div class="bubbles-column right">
+                    <div class="bubbles-track-vertical">
+                        <!-- Série 1 (différents avis) -->
+                        <div class="bubble-review"><div class="bubble-avatar">E</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Emma</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Adidas Samba impecc</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">M</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Maxime</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Blanchiment semelles</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Laura</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">New Balance comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">N</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Nicolas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Service rapide et pro</div><span class="bubble-service">Express</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Chloé</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Protection efficace</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">H</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Hugo</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Je reviendrai c'est sûr</div><span class="bubble-service">Classique</span></div></div>
+                        <!-- Duplicata -->
+                        <div class="bubble-review"><div class="bubble-avatar">E</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Emma</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Adidas Samba impecc</div><span class="bubble-service">Classique</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">M</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Maxime</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Blanchiment semelles</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Laura</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">New Balance comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">N</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Nicolas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Service rapide et pro</div><span class="bubble-service">Express</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Chloé</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Protection efficace</div><span class="bubble-service">Premium</span></div></div>
+                        <div class="bubble-review"><div class="bubble-avatar">H</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Hugo</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Je reviendrai c'est sûr</div><span class="bubble-service">Classique</span></div></div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="form-group">
-                        <label for="urgence">Niveau d'urgence</label>
-                        <select id="urgence" name="urgence">
-                            <option value="normal">Normal (3-5 jours)</option>
-                            <option value="rapide">Rapide (24-48h) +5€</option>
-                            <option value="express">Express (24h) +10€</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Envoyer ma demande de devis</button>
-                </form>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
-                    * Champs obligatoires • Réponse sous 24h maximum
-                </p>
+            <!-- Note globale -->
+            <div class="global-rating">
+                <i class="fab fa-google"></i>
+                <span class="stars">★★★★★</span>
+                <span>4.9 · 158 avis</span>
             </div>
         </section>
     </div>
 
-    <!-- PETITES BULLES D'AVIS QUI DÉFILENT (comme demandé) -->
-    <section class="bubbles-testimonials">
-        <h3>
-            <i class="fas fa-comment-dots"></i> Ils en parlent mieux que nous
-        </h3>
-        
-        <div class="bubbles-track">
-            <!-- PREMIÈRE SÉRIE DE BULLES (8) -->
-            <div class="bubble-review">
-                <div class="bubble-avatar">T</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Thomas</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Jordan comme neuves, incroyable !</div>
-                    <span class="bubble-service">Rénovation</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">S</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Sarah</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Yeezy impeccables, taches parties</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">J</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Jordan</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Express 24h, Air Max nickels</div>
-                    <span class="bubble-service">Express</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">C</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Camille</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Dunk Low parfaites, pro à l'écoute</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">A</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Antoine</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Enfin un pro à Dijon, top !</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">L</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Lucas</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Toutes mes paires ici, jamais déçu</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">E</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Emma</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Adidas Samba comme au premier jour</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">M</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Maxime</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Blanchiment semelles impressionnant</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-            
-            <!-- DUPLICATA POUR L'EFFET INFINI (même ordre) -->
-            <div class="bubble-review">
-                <div class="bubble-avatar">T</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Thomas</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Jordan comme neuves, incroyable !</div>
-                    <span class="bubble-service">Rénovation</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">S</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Sarah</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Yeezy impeccables, taches parties</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">J</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Jordan</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Express 24h, Air Max nickels</div>
-                    <span class="bubble-service">Express</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">C</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Camille</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Dunk Low parfaites, pro à l'écoute</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">A</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Antoine</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Enfin un pro à Dijon, top !</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">L</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Lucas</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Toutes mes paires ici, jamais déçu</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">E</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Emma</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Adidas Samba comme au premier jour</div>
-                    <span class="bubble-service">Classique</span>
-                </div>
-            </div>
-            <div class="bubble-review">
-                <div class="bubble-avatar">M</div>
-                <div class="bubble-content">
-                    <div class="bubble-header">
-                        <span class="bubble-name">Maxime</span>
-                        <span class="bubble-stars">★★★★★</span>
-                    </div>
-                    <div class="bubble-text">Blanchiment semelles impressionnant</div>
-                    <span class="bubble-service">Premium</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mini note globale -->
-        <div class="global-rating">
-            <i class="fab fa-google"></i>
-            <span class="stars">★★★★★</span>
-            <span>4.9 · 158 avis</span>
-        </div>
-    </section>
-
-    <!-- Bloc contact (après les bulles) -->
+    <!-- Bloc contact -->
     <div class="contact">
         <div class="container">
             <h2>Contactez-nous</h2>
