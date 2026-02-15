@@ -435,20 +435,26 @@
         /* Styles spécifiques pour les liens dans contact-info */
         .contact-info p {
             margin: 0.8rem 0;
-            word-break: normal; /* Changé de break-word à normal */
-            white-space: normal; /* Changé de nowrap à normal */
-            overflow: visible; /* Changé de hidden à visible */
-            text-overflow: clip; /* Changé de ellipsis à clip */
+            word-break: normal;
+            white-space: normal;
+            overflow: visible;
+            text-overflow: clip;
         }
         
         .contact-info a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            display: inline; /* Changé de inline-block à inline */
-            white-space: normal; /* Changé de nowrap à normal */
-            word-break: normal; /* Changé de break-word à normal */
-            overflow: visible; /* Changé de hidden à visible */
+            display: inline;
+            white-space: normal;
+            word-break: normal;
+            overflow: visible;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
         
         .btn {
@@ -634,7 +640,7 @@
             to { left: 100%; }
         }
 
-        /* CORRECTION POUR MOBILE - SANS CHANGER L'APPARENCE NI L'ÉCRITURE */
+        /* CORRECTION POUR MOBILE */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2rem;
@@ -646,7 +652,6 @@
                 min-height: 300px;
             }
             
-            /* Correction section contact pour mobile - seulement l'alignement */
             .contact-info {
                 padding: 1.5rem 1rem;
                 font-size: 1.1rem;
@@ -673,25 +678,16 @@
                 max-width: 100%;
             }
             
-            /* L'email s'affichera normalement, mais le conteneur flexible permet le retour à la ligne */
-            .contact-info p:has(strong:contains("Email")) {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            /* Solution plus fiable - cibler spécifiquement la ligne d'email */
             .contact-info p:nth-of-type(2) {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.2rem;
             }
             
-            /* La ligne WhatsApp */
             .contact-info p:nth-of-type(3) {
                 flex-wrap: wrap;
             }
             
-            /* Ajustement du bouton */
             .btn {
                 padding: 1rem 2rem;
                 font-size: 1rem;
@@ -699,7 +695,6 @@
             }
         }
 
-        /* CORRECTION SUPPLÉMENTAIRE POUR TRÈS PETITS ÉCRANS */
         @media (max-width: 380px) {
             .contact-info p {
                 flex-direction: column;
@@ -856,6 +851,8 @@
                 <p>Pour un devis ou une prise de rendez-vous :</p>
                 <p><strong>📧 Email :</strong> <a href="mailto:meso.multiservices@gmail.com">meso.multiservices@gmail.com</a></p>
                 <p><strong>📱 WhatsApp :</strong> <a href="https://wa.me/33745171880">+33 7 45 17 18 80</a></p>
+                <!-- NOUVEAU : Instagram ajouté ici -->
+                <p><strong>📸 Instagram :</strong> <a href="https://www.instagram.com/meso.multiservices?utm_source=qr" target="_blank">@meso.multiservices</a></p>
                 <p><strong>📍 Zone :</strong> Dijon et alentours (21)</p>
                 <a href="#formulaire-devis" class="btn">Demander un Devis Gratuit</a>
             </div>
