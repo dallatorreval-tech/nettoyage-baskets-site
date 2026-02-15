@@ -320,16 +320,14 @@
             </div>
         </section>
 
-        <!-- Formulaire de devis -->
+        <!-- Formulaire de devis avec votre endpoint Formspree -->
         <section id="formulaire-devis" class="devis-form-section">
             <h2 style="text-align: center; color: #667eea; margin-bottom: 2rem;">Demande de devis gratuit</h2>
             <div class="devis-form">
                 <div id="successMessage" class="success-message"></div>
-                <form id="devisForm" action="https://formspree.io/f/mzzdgrdj" method="POST">
-                    <!-- Champ caché pour l'email de destination -->
-                    <input type="hidden" name="_to" value="meso.multiservices@gmail.com">
+                <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
+                    <!-- Champ caché pour l'email de destination (optionnel avec Formspree) -->
                     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
-                    <input type="hidden" name="_replyto" value="meso.multiservices@gmail.com">
                     
                     <div class="form-group">
                         <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
@@ -454,15 +452,12 @@
 
         // Gestion de la soumission du formulaire avec Formspree
         document.getElementById('devisForm').addEventListener('submit', function(e) {
-            // Pas de e.preventDefault() car on veut que Formspree gère l'envoi
-            
             // Afficher un message de chargement
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
-
-            // Le formulaire est envoyé normalement à Formspree
+            
+            // Le formulaire continue son envoi normal vers Formspree
             // Formspree redirigera vers une page de confirmation
         });
 
@@ -478,63 +473,5 @@
             }, 100);
         }
     </script>
-
-    <!-- Alternative avec EmailJS (si vous préférez un envoi sans redirection) -->
-    <!-- Décommentez cette section si vous voulez utiliser EmailJS à la place de Formspree
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("VOTRE_USER_ID_EMAILJS"); // Remplacez par votre USER ID EmailJS
-        })();
-
-        document.getElementById('devisForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-
-            // Récupérer les données du formulaire
-            const formData = {
-                service: document.getElementById('service').value,
-                nom: document.getElementById('nom').value,
-                prenom: document.getElementById('prenom').value,
-                email: document.getElementById('email').value,
-                telephone: document.getElementById('telephone').value,
-                marque: document.getElementById('marque').value,
-                message: document.getElementById('message').value,
-                urgence: document.getElementById('urgence').value,
-                to_email: 'meso.multiservices@gmail.com'
-            };
-
-            // Envoyer l'email via EmailJS
-            emailjs.send('service_id', 'template_id', formData)
-                .then(function() {
-                    // Succès
-                    document.getElementById('devisForm').reset();
-                    document.getElementById('selected-service').textContent = '';
-                    
-                    const successMessage = document.getElementById('successMessage');
-                    successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
-                    successMessage.style.display = 'block';
-                    
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    
-                    setTimeout(() => {
-                        successMessage.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }, function(error) {
-                    // Erreur
-                    alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.');
-                    console.error('Erreur:', error);
-                    
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                });
-        });
-    </script>
-    -->
 </body>
 </html>
