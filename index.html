@@ -14,21 +14,204 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #f5f5f5;
         }
+        
+        /* EN-TÊTE SPECTACULAIRE - THÈME NETTOYAGE BASKETS */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(145deg, #0B3B5C 0%, #1B6B8F 40%, #4CB5E0 100%);
             color: white;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
+        
+        /* ANIMATION DE MOUSSE QUI TOMBE */
+        .header .foam {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.15"><circle cx="20" cy="30" r="8" fill="white"/><circle cx="50" cy="15" r="12" fill="white"/><circle cx="80" cy="25" r="6" fill="white"/><circle cx="35" cy="60" r="10" fill="white"/><circle cx="70" cy="70" r="15" fill="white"/><circle cx="10" cy="80" r="7" fill="white"/><circle cx="90" cy="85" r="9" fill="white"/><circle cx="45" cy="90" r="8" fill="white"/></svg>') repeat;
+            animation: foamFloat 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes foamFloat {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-50px) rotate(5deg); }
+        }
+        
+        /* ÉCLABOUSSURES D'EAU */
+        .header .splash {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent 0%, rgba(255,255,255,0.3) 70%);
+            border-radius: 50% 50% 0 0;
+            filter: blur(10px);
+            animation: waterWave 3s ease-in-out infinite;
+        }
+        
+        @keyframes waterWave {
+            0%, 100% { transform: scaleY(1); opacity: 0.3; }
+            50% { transform: scaleY(1.2); opacity: 0.5; }
+        }
+        
+        /* BRILLANCE ET PROPRETÉ */
+        .header .shine {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 50%);
+            animation: shine 8s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg); opacity: 0; }
+            50% { transform: rotate(180deg); opacity: 0.1; }
+            100% { transform: rotate(360deg); opacity: 0; }
+        }
+        
+        /* GOUTTES D'EAU QUI COULENT */
+        .header .droplet {
+            position: absolute;
+            background: rgba(255,255,255,0.4);
+            width: 3px;
+            height: 20px;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: drip 3s ease-in infinite;
+        }
+        
+        .header .droplet:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .header .droplet:nth-child(2) { left: 30%; animation-delay: 1s; }
+        .header .droplet:nth-child(3) { left: 50%; animation-delay: 2s; }
+        .header .droplet:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+        .header .droplet:nth-child(5) { left: 90%; animation-delay: 0.5s; }
+        
+        @keyframes drip {
+            0% { top: -20px; opacity: 0; }
+            30% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* SILHOUETTES DE BASKETS EN ARRIÈRE-PLAN */
+        .header .sneaker-bg {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 8rem;
+            transform: rotate(-15deg);
+            bottom: -20px;
+            right: -20px;
+            filter: blur(3px);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .header .sneaker-bg.left {
+            left: -20px;
+            bottom: -20px;
+            transform: rotate(15deg);
+            animation-delay: -3s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(-15deg) translateY(0); }
+            50% { transform: rotate(-15deg) translateY(-20px); }
+        }
+        
+        /* TITRE PRINCIPAL AVEC EFFET BRILLANT */
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 10;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.5);
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #fff 30%, #FFD700 50%, #fff 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 3s linear infinite;
         }
+        
+        @keyframes textShine {
+            to { background-position: 200% center; }
+        }
+        
         .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 10;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 400;
+            letter-spacing: 1px;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: glow 2s ease-in-out infinite;
         }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+            50% { box-shadow: 0 0 30px rgba(255,255,215,0.6); }
+        }
+        
+        /* BROSSE DE NETTOYAGE ANIMÉE */
+        .header .brush {
+            position: absolute;
+            left: 5%;
+            top: 20%;
+            font-size: 3rem;
+            transform: rotate(-30deg);
+            animation: brushMove 4s ease-in-out infinite;
+            z-index: 5;
+            opacity: 0.5;
+        }
+        
+        @keyframes brushMove {
+            0%, 100% { transform: rotate(-30deg) translateX(0); }
+            50% { transform: rotate(-20deg) translateX(20px); }
+        }
+        
+        /* BULLES DE SAVON QUI MONTENT */
+        .header .bubble {
+            position: absolute;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            animation: bubbleUp 4s ease-in infinite;
+            z-index: 5;
+        }
+        
+        .header .bubble:nth-child(11) { width: 30px; height: 30px; left: 15%; animation-delay: 0s; }
+        .header .bubble:nth-child(12) { width: 50px; height: 50px; left: 35%; animation-delay: 1s; }
+        .header .bubble:nth-child(13) { width: 20px; height: 20px; left: 55%; animation-delay: 2s; }
+        .header .bubble:nth-child(14) { width: 40px; height: 40px; left: 75%; animation-delay: 1.5s; }
+        .header .bubble:nth-child(15) { width: 25px; height: 25px; left: 95%; animation-delay: 0.5s; }
+        
+        @keyframes bubbleUp {
+            0% { bottom: -50px; opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { bottom: 100%; opacity: 0; }
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -38,12 +221,29 @@
             margin-bottom: 3rem;
         }
         .section h2 {
-            color: #667eea;
+            color: #0B3B5C;
             font-size: 2rem;
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 4px solid #4CB5E0;
             padding-bottom: 0.5rem;
+            display: inline-block;
+            position: relative;
         }
+        
+        .section h2::after {
+            content: "🧼";
+            position: absolute;
+            right: -40px;
+            top: 0;
+            font-size: 2rem;
+            animation: spin 4s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -51,138 +251,294 @@
             margin-top: 2rem;
         }
         .service-card {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
             display: flex;
             flex-direction: column;
             height: 100%;
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .service-card::before {
+            content: "✨";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 5rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+        
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(75, 181, 224, 0.3);
         }
+        
+        .service-card:hover::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+            animation: cardShine 1s;
+        }
+        
+        @keyframes cardShine {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+        
         .service-card h3 {
-            color: #764ba2;
+            color: #0B3B5C;
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 800;
         }
         .service-card .price {
-            font-size: 1.8rem;
-            color: #667eea;
+            font-size: 2rem;
+            color: #4CB5E0;
             font-weight: bold;
             margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, #0B3B5C, #4CB5E0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .service-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 15px;
             margin: 1rem 0;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
         }
+        
+        .service-card:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(75, 181, 224, 0.4);
+        }
+        
         .service-card .btn-devis {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0B3B5C 0%, #4CB5E0 100%);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s, opacity 0.3s;
+            transition: all 0.3s;
             margin-top: auto;
             text-decoration: none;
             text-align: center;
             display: inline-block;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .service-card .btn-devis::before {
+            content: "🧼";
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: left 0.3s;
+        }
+        
+        .service-card .btn-devis:hover::before {
+            left: 10px;
+        }
+        
         .service-card .btn-devis:hover {
             transform: scale(1.05);
-            opacity: 0.9;
+            box-shadow: 0 5px 20px rgba(75, 181, 224, 0.6);
+            padding-left: 3rem;
         }
+        
         .about {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 20px;
             margin-top: 2rem;
+            border-left: 6px solid #4CB5E0;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .about::before {
+            content: "👟👟👟";
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 5rem;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+        
+        .about h3 {
+            color: #0B3B5C;
+            font-size: 1.8rem;
+        }
+        
         .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(145deg, #0B3B5C 0%, #1B6B8F 50%, #4CB5E0 100%);
             color: white;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
-            margin-top: 3rem;
-            border-radius: 10px;
+            margin-top: 4rem;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .contact::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, #FFD700, #fff, #FFD700);
+            animation: borderLight 2s linear infinite;
+        }
+        
+        @keyframes borderLight {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
         .contact h2 {
             color: white;
-            border-bottom: 3px solid white;
+            border-bottom: 3px solid rgba(255,255,255,0.5);
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
+        
         .contact-info {
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        
         .btn {
             display: inline-block;
             background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            margin-top: 1rem;
-            border-radius: 5px;
+            color: #0B3B5C;
+            padding: 1.2rem 3rem;
+            margin-top: 1.5rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .btn::after {
+            content: "→";
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: right 0.3s;
+        }
+        
+        .btn:hover::after {
+            right: 20px;
+        }
+        
         .btn:hover {
             transform: scale(1.05);
+            background: transparent;
+            color: white;
+            border-color: white;
+            padding-right: 4rem;
         }
 
-        /* Styles du formulaire de devis - VERSION COMPACTE (textes inchangés) */
+        /* Styles du formulaire de devis - ENHANCÉ */
         .devis-form-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2rem 1rem;
-            border-radius: 10px;
-            margin: 2rem 0;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            padding: 3rem 1rem;
+            border-radius: 30px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .devis-form-section::before {
+            content: "🧽🧹🧼";
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+        
+        .devis-form-section::after {
+            content: "💧💧💧";
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+        
         .devis-form {
             max-width: 500px;
             margin: 0 auto;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(11, 59, 92, 0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
         }
+        
         .form-group {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
         .form-group label {
             display: block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
             font-weight: 600;
-            color: #333;
+            color: #0B3B5C;
             font-size: 0.95rem;
         }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.5rem 0.7rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
+            padding: 0.7rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
             font-size: 0.95rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            background: white;
         }
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #4CB5E0;
+            box-shadow: 0 0 0 3px rgba(76, 181, 224, 0.2);
         }
         .form-group textarea {
             resize: vertical;
@@ -194,119 +550,112 @@
             gap: 0.8rem;
         }
         .btn-submit {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0B3B5C 0%, #4CB5E0 100%);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 4px;
-            font-size: 1rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
-            transition: transform 0.3s;
-            margin-top: 0.5rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .btn-submit::before {
+            content: "✨";
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: left 0.3s;
+        }
+        
+        .btn-submit:hover::before {
+            left: 20px;
+        }
+        
         .btn-submit:hover {
             transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(75, 181, 224, 0.4);
         }
+        
         .service-badge {
             display: inline-block;
-            background: #667eea;
+            background: #4CB5E0;
             color: white;
-            padding: 0.2rem 0.5rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-left: 0.5rem;
         }
-        #selected-service {
-            font-weight: bold;
-            color: #667eea;
-            font-size: 0.9rem;
-        }
 
-        /* Message de succès */
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 0.8rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            text-align: center;
-            display: none;
-            font-size: 0.95rem;
+        footer {
+            background: #0B3B5C !important;
+            color: white !important;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Titre du formulaire */
-        .devis-form-section h2 {
-            color: #667eea;
-            margin-bottom: 1.2rem;
-            font-size: 1.8rem;
-            text-align: center;
+        
+        footer::before {
+            content: "👟";
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+            animation: walk 10s linear infinite;
         }
-
-        /* Petit texte d'info */
-        .form-footnote {
-            text-align: center;
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-            color: #666;
+        
+        @keyframes walk {
+            from { left: -50px; }
+            to { left: 100%; }
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
             }
             .header p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
-            .section h2 {
-                font-size: 1.5rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .service-card h3 {
-                font-size: 1.2rem;
-            }
-            .service-card .price {
-                font-size: 1.5rem;
-            }
-            .contact {
-                padding: 2rem 1rem;
-            }
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.95rem;
-            }
-            .about {
-                padding: 1.5rem;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-            .devis-form {
-                padding: 1.2rem;
-            }
-            .devis-form-section {
-                padding: 1.5rem 1rem;
-            }
-            .devis-form-section h2 {
-                font-size: 1.5rem;
+            .header {
+                min-height: 300px;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <h1>👟 Clean tes Pompes👟</h1>
-        <p>Rénovation et Nettoyage Professionnel de Sneakers à Dijon</p>
+        <div class="foam"></div>
+        <div class="splash"></div>
+        <div class="shine"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="droplet"></div>
+        <div class="brush">🧹</div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="sneaker-bg">👟</div>
+        <div class="sneaker-bg left">👟</div>
+        
+        <div style="position: relative; z-index: 20;">
+            <h1>👟 Clean tes Pompes 👟</h1>
+            <p>Rénovation et Nettoyage Professionnel de Sneakers à Dijon</p>
+        </div>
     </header>
 
     <div class="container">
         <section class="section">
-            <h2>Nos Services <a href="tel:+33745171880" style="color: #667eea; text-decoration: none; font-size: 1.5rem;">📱</a></h2>
+            <h2>Nos Services <a href="tel:+33745171880" style="color: #4CB5E0; text-decoration: none; font-size: 1.5rem;">📱</a></h2>
             <div class="services-grid">
                 <div class="service-card">
                     <h3>✨ Nettoyage Classique</h3>
@@ -347,13 +696,12 @@
             </div>
         </section>
 
-        <!-- Formulaire de devis - VERSION COMPACTE (textes identiques) -->
+        <!-- Formulaire de devis -->
         <section id="formulaire-devis" class="devis-form-section">
-            <h2>Demande de devis gratuit</h2>
+            <h2 style="text-align: center; color: #0B3B5C; margin-bottom: 2rem; font-size: 2rem;">Demande de devis gratuit</h2>
             <div class="devis-form">
                 <div id="successMessage" class="success-message"></div>
                 <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
-                    <!-- Champ caché pour l'email de destination (optionnel avec Formspree) -->
                     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
                     
                     <div class="form-group">
@@ -409,7 +757,9 @@
 
                     <button type="submit" class="btn-submit">Envoyer ma demande de devis</button>
                 </form>
-                <p class="form-footnote">* Champs obligatoires • Réponse sous 24h maximum</p>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                    * Champs obligatoires • Réponse sous 24h maximum
+                </p>
             </div>
         </section>
     </div>
@@ -432,12 +782,10 @@
     </footer>
 
     <script>
-        // Fonction pour pré-sélectionner le service dans le formulaire
         function selectService(serviceName) {
             const select = document.getElementById('service');
             const selectedServiceSpan = document.getElementById('selected-service');
             
-            // Trouver et sélectionner l'option correspondante
             for (let option of select.options) {
                 if (option.text.includes(serviceName)) {
                     option.selected = true;
@@ -445,17 +793,14 @@
                 }
             }
             
-            // Afficher un badge avec le service sélectionné
             selectedServiceSpan.textContent = serviceName;
             selectedServiceSpan.style.display = 'inline-block';
             
-            // Smooth scroll vers le formulaire
             document.getElementById('formulaire-devis').scrollIntoView({ 
                 behavior: 'smooth' 
             });
         }
 
-        // Mettre à jour le badge quand l'utilisateur change manuellement le service
         document.getElementById('service').addEventListener('change', function() {
             const selectedOption = this.options[this.selectedIndex];
             const selectedServiceSpan = document.getElementById('selected-service');
@@ -470,20 +815,16 @@
             }
         });
 
-        // Validation du téléphone (optionnel)
         document.getElementById('telephone').addEventListener('input', function(e) {
             this.value = this.value.replace(/[^0-9+]/g, '');
         });
 
-        // Gestion de la soumission du formulaire avec Formspree
         document.getElementById('devisForm').addEventListener('submit', function(e) {
-            // Afficher un message de chargement
             const submitBtn = this.querySelector('button[type="submit"]');
             submitBtn.textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
         });
 
-        // Vérifier si le formulaire a été soumis avec succès (paramètre dans l'URL)
         if (window.location.search.includes('success=true')) {
             const successMessage = document.getElementById('successMessage');
             successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
