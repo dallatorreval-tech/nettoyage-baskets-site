@@ -56,6 +56,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -71,6 +74,32 @@
             color: #667eea;
             font-weight: bold;
             margin: 1rem 0;
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .service-card .btn-devis {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+            margin-top: auto;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        .service-card .btn-devis:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
         .about {
             background: #f8f9fa;
@@ -113,6 +142,85 @@
         .btn:hover {
             transform: scale(1.05);
         }
+
+        /* Styles du formulaire de devis */
+        .devis-form-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 1rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+        .devis-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+        }
+        .service-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        #selected-service {
+            font-weight: bold;
+            color: #667eea;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.8rem;
@@ -143,6 +251,12 @@
             .about {
                 padding: 1.5rem;
             }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .devis-form {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -160,19 +274,22 @@
                     <h3>✨ Nettoyage Classique</h3>
                     <p>Nettoyage complet de vos baskets : dessus, lacets, semelles. Redonner éclat et fraîcheur à vos sneakers.</p>
                     <div class="price">À partir de 15€</div>
-                    <img src="https://media.gqmagazine.fr/photos/663a0cb2eeb9a2fda8341c6d/master/pass/Best-sneakers-2024-b.jpg" alt="Service1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-top: 1rem;">
+                    <img src="https://media.gqmagazine.fr/photos/663a0cb2eeb9a2fda8341c6d/master/pass/Best-sneakers-2024-b.jpg" alt="Service1">
+                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Nettoyage Classique')">📝 Demander un devis</a>
                 </div>
                 <div class="service-card">
                     <h3>💎 Rénovation Premium</h3>
                     <p>Restauration en profondeur : blanchiment semelles, traitement anti-taches, protection longue durée.</p>
                     <div class="price">À partir de 25€</div>
-                    <img src="https://static.ftshp.digital/img/p/6/4/7/8/9/64789-full_product.jpg" alt="Service 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-top: 1rem;">
+                    <img src="https://static.ftshp.digital/img/p/6/4/7/8/9/64789-full_product.jpg" alt="Service 2">
+                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Rénovation Premium')">📝 Demander un devis</a>
                 </div>
                 <div class="service-card">
                     <h3>⚡ Nettoyage Express</h3>
                     <p>Service rapide pour un nettoyage d'urgence. Résultat pro en 24h chrono.</p>
                     <div class="price">À partir de 20€</div>
-                    <img src="https://cdn.lesitedelasneaker.com/wp-content/images/2023/01/ycmc-new-balance-990v3-m990s03-pic08-1100x772.jpg" alt="Service 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-top: 1rem;">
+                    <img src="https://cdn.lesitedelasneaker.com/wp-content/images/2023/01/ycmc-new-balance-990v3-m990s03-pic08-1100x772.jpg" alt="Service 3">
+                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Nettoyage Express')">📝 Demander un devis</a>
                 </div>
             </div>
         </section>
@@ -191,6 +308,70 @@
                 </ul>
             </div>
         </section>
+
+        <!-- Formulaire de devis -->
+        <section id="formulaire-devis" class="devis-form-section">
+            <h2 style="text-align: center; color: #667eea; margin-bottom: 2rem;">Demande de devis gratuit</h2>
+            <div class="devis-form">
+                <form id="devisForm" onsubmit="return submitDevis(event)">
+                    <div class="form-group">
+                        <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
+                        <select id="service" name="service" required>
+                            <option value="">Sélectionnez un service</option>
+                            <option value="Nettoyage Classique">Nettoyage Classique - À partir de 15€</option>
+                            <option value="Rénovation Premium">Rénovation Premium - À partir de 25€</option>
+                            <option value="Nettoyage Express">Nettoyage Express - À partir de 20€</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marque">Marque des baskets</label>
+                        <input type="text" id="marque" name="marque" placeholder="Ex: Nike, Adidas, Jordan...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Description du service souhaité *</label>
+                        <textarea id="message" name="message" required placeholder="Décrivez vos besoins (nombre de paires, type de nettoyage, urgence...)"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgence">Niveau d'urgence</label>
+                        <select id="urgence" name="urgence">
+                            <option value="normal">Normal (3-5 jours)</option>
+                            <option value="rapide">Rapide (24-48h) +5€</option>
+                            <option value="express">Express (24h) +10€</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer ma demande de devis</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    * Champs obligatoires • Réponse sous 24h maximum
+                </p>
+            </div>
+        </section>
     </div>
 
     <div class="contact">
@@ -201,7 +382,7 @@
                 <p><strong>📧 Email :</strong> <a href="mailto:meso.multiservices@gmail.com">meso.multiservices@gmail.com</a></p>
                 <p><strong>📱 WhatsApp :</strong> <a href="https://wa.me/33745171880">+33 7 45 17 18 80</a></p>
                 <p><strong>📍 Zone :</strong> Dijon et alentours (21)</p>
-                <a href="#" class="btn">Demander un Devis Gratuit</a>
+                <a href="#formulaire-devis" class="btn">Demander un Devis Gratuit</a>
             </div>
         </div>
     </div>
@@ -209,5 +390,86 @@
     <footer style="text-align: center; padding: 2rem; background: #333; color: white;">
         <p>&copy; 2026 Nettoyage de Baskets Dijon - Tous droits réservés</p>
     </footer>
+
+    <script>
+        // Fonction pour pré-sélectionner le service dans le formulaire
+        function selectService(serviceName) {
+            const select = document.getElementById('service');
+            const selectedServiceSpan = document.getElementById('selected-service');
+            
+            // Trouver et sélectionner l'option correspondante
+            for (let option of select.options) {
+                if (option.text.includes(serviceName)) {
+                    option.selected = true;
+                    break;
+                }
+            }
+            
+            // Afficher un badge avec le service sélectionné
+            selectedServiceSpan.textContent = serviceName;
+            selectedServiceSpan.style.display = 'inline-block';
+            
+            // Smooth scroll vers le formulaire
+            document.getElementById('formulaire-devis').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Fonction de soumission du formulaire
+        function submitDevis(event) {
+            event.preventDefault();
+            
+            // Récupérer les valeurs du formulaire
+            const formData = {
+                service: document.getElementById('service').value,
+                nom: document.getElementById('nom').value,
+                prenom: document.getElementById('prenom').value,
+                email: document.getElementById('email').value,
+                telephone: document.getElementById('telephone').value,
+                marque: document.getElementById('marque').value,
+                message: document.getElementById('message').value,
+                urgence: document.getElementById('urgence').value
+            };
+
+            // Validation simple
+            if (!formData.service || !formData.nom || !formData.prenom || !formData.email || !formData.telephone || !formData.message) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return false;
+            }
+
+            // Ici vous pouvez ajouter l'envoi vers votre backend
+            // Pour l'exemple, on simule un envoi réussi
+            console.log('Formulaire soumis :', formData);
+            
+            // Message de confirmation
+            alert('Merci pour votre demande de devis ! Nous vous répondrons dans les plus brefs délais.');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('devisForm').reset();
+            document.getElementById('selected-service').textContent = '';
+            
+            return false;
+        }
+
+        // Mettre à jour le badge quand l'utilisateur change manuellement le service
+        document.getElementById('service').addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const selectedServiceSpan = document.getElementById('selected-service');
+            
+            if (this.value) {
+                const serviceName = selectedOption.text.split(' - ')[0];
+                selectedServiceSpan.textContent = serviceName;
+                selectedServiceSpan.style.display = 'inline-block';
+            } else {
+                selectedServiceSpan.textContent = '';
+                selectedServiceSpan.style.display = 'none';
+            }
+        });
+
+        // Validation du téléphone (optionnel)
+        document.getElementById('telephone').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9+]/g, '');
+        });
+    </script>
 </body>
 </html>
