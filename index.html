@@ -432,6 +432,25 @@
             backdrop-filter: blur(10px);
         }
         
+        /* Styles spécifiques pour les liens dans contact-info */
+        .contact-info p {
+            margin: 0.8rem 0;
+            word-break: normal; /* Changé de break-word à normal */
+            white-space: normal; /* Changé de nowrap à normal */
+            overflow: visible; /* Changé de hidden à visible */
+            text-overflow: clip; /* Changé de ellipsis à clip */
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline; /* Changé de inline-block à inline */
+            white-space: normal; /* Changé de nowrap à normal */
+            word-break: normal; /* Changé de break-word à normal */
+            overflow: visible; /* Changé de hidden à visible */
+        }
+        
         .btn {
             display: inline-block;
             background: white;
@@ -615,6 +634,7 @@
             to { left: 100%; }
         }
 
+        /* CORRECTION POUR MOBILE - SANS CHANGER L'APPARENCE NI L'ÉCRITURE */
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2.2rem;
@@ -624,6 +644,71 @@
             }
             .header {
                 min-height: 300px;
+            }
+            
+            /* Correction section contact pour mobile - seulement l'alignement */
+            .contact-info {
+                padding: 1.5rem 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .contact-info p {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                justify-content: center;
+                gap: 0.3rem;
+                margin: 0.6rem 0;
+                text-align: center;
+            }
+            
+            .contact-info strong {
+                display: inline-block;
+                white-space: nowrap;
+            }
+            
+            .contact-info a {
+                display: inline-block;
+                white-space: nowrap;
+                max-width: 100%;
+            }
+            
+            /* L'email s'affichera normalement, mais le conteneur flexible permet le retour à la ligne */
+            .contact-info p:has(strong:contains("Email")) {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* Solution plus fiable - cibler spécifiquement la ligne d'email */
+            .contact-info p:nth-of-type(2) {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.2rem;
+            }
+            
+            /* La ligne WhatsApp */
+            .contact-info p:nth-of-type(3) {
+                flex-wrap: wrap;
+            }
+            
+            /* Ajustement du bouton */
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+        }
+
+        /* CORRECTION SUPPLÉMENTAIRE POUR TRÈS PETITS ÉCRANS */
+        @media (max-width: 380px) {
+            .contact-info p {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.2rem;
+            }
+            
+            .contact-info strong {
+                margin-right: 0;
             }
         }
     </style>
