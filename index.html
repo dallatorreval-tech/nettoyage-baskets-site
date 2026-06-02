@@ -1,1070 +1,501 @@
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Clean Tes Pompes Dijon — Graffiti Premium&lt;/title&gt;
+&lt;meta name="description" content="Nettoyage de baskets à Dijon. Style graffiti premium, rapide, street et efficace. WhatsApp direct, devis court, offres simples."&gt;
+&lt;link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap" rel="stylesheet"&gt;
+&lt;style&gt;
+:root,[data-theme="light"]{--bg:#f3eee6;--surface:#fffaf2;--surface-2:#eee4d7;--text:#14110f;--muted:#645a4e;--line:rgba(20,17,15,.12);--primary:#ff4d1f;--primary2:#1f57ff;--lime:#c7ff4d;--shadow:0 18px 42px rgba(0,0,0,.12);--r:24px;--f:'Satoshi',sans-serif;--d:'Clash Display','Satoshi',sans-serif}
+[data-theme="dark"]{--bg:#0d0c0b;--surface:#171512;--surface-2:#211e1a;--text:#f5efe7;--muted:#b7ac9b;--line:rgba(255,255,255,.1);--primary:#ff6735;--primary2:#6b8dff;--lime:#d8ff62;--shadow:0 18px 42px rgba(0,0,0,.35)}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth} body{font-family:var(--f);background:radial-gradient(circle at 12% 10%,rgba(255,77,31,.14),transparent 20%),radial-gradient(circle at 88% 0%,rgba(31,87,255,.14),transparent 18%),linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--bg) 80%,black));color:var(--text);line-height:1.5;overflow-x:hidden} a{color:inherit;text-decoration:none} .container{width:min(1120px,calc(100% - 24px));margin:0 auto}
+.site-header{position:sticky;top:0;z-index:99;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)} .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{display:flex;align-items:center;gap:12px;font-weight:900;text-transform:uppercase;letter-spacing:-.03em}.logo-box{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:var(--shadow)}
+.nav-links{display:flex;gap:24px;color:var(--muted);font-size:15px;font-weight:800}.nav-actions{display:flex;gap:10px;align-items:center}.btn{min-height:48px;padding:0 18px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;transition:.18s ease}.btn:hover{transform:translateY(-1px)} .btn-primary{background:var(--primary);color:#fff;border-color:transparent;box-shadow:var(--shadow)} .btn-primary:hover{background:color-mix(in srgb,var(--primary) 82%,black)} .btn-ghost{background:var(--surface)} .theme-toggle,.mobile-toggle{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)} .mobile-toggle{display:none}
+.hero{padding:58px 0 74px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:color-mix(in srgb,var(--primary) 12%,var(--surface));border:1px solid var(--line);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.title{margin-top:18px;font-family:var(--d);font-size:clamp(2.2rem,6vw,5.2rem);line-height:.9;letter-spacing:-.07em;text-transform:uppercase}.lead{margin-top:18px;max-width:58ch;color:var(--muted);font-size:clamp(1rem,1vw + .8rem,1.12rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.mini{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}.pill{padding:10px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:800}
+.hero-art{position:relative;min-height:560px;border-radius:32px;border:1px solid var(--line);background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 92%,#fff),var(--surface-2));box-shadow:var(--shadow);overflow:hidden}.spray{position:absolute;inset:0;background:radial-gradient(circle at 12% 18%,rgba(255,77,31,.34) 0 7%,transparent 8%),radial-gradient(circle at 16% 24%,rgba(255,77,31,.18) 0 11%,transparent 12%),radial-gradient(circle at 84% 18%,rgba(31,87,255,.28) 0 8%,transparent 9%),radial-gradient(circle at 76% 80%,rgba(199,255,77,.25) 0 10%,transparent 11%),radial-gradient(circle at 26% 84%,rgba(255,77,31,.16) 0 8%,transparent 9%);opacity:.95;pointer-events:none}.tag-wall{position:absolute;top:26px;left:26px;right:26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--d);text-transform:uppercase;font-size:clamp(1rem,1.7vw,1.45rem);line-height:.95;letter-spacing:-.04em;opacity:.15;transform:rotate(-4deg)}.hero-sticker,.hero-sticker-2{position:absolute;padding:12px 16px;border-radius:18px;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.08em;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.45)}.hero-sticker{right:18px;top:18px;background:var(--lime);color:#111;transform:rotate(8deg)}.hero-sticker-2{left:18px;bottom:18px;background:#111;color:#fff;transform:rotate(-6deg)}.shoe-box{position:absolute;inset:100px 28px 28px 28px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.34)),var(--surface);border:1px solid rgba(255,255,255,.55);display:grid;place-items:center;overflow:hidden}.shoe-box svg{width:min(100%,520px);filter:drop-shadow(0 20px 25px rgba(0,0,0,.25))}
+.grid-3,.before-after,.steps,.reviews,.footer-grid{display:grid;gap:18px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}.card{background:color-mix(in srgb,var(--surface) 94%,transparent);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}.offer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.offer-title{font-family:var(--d);text-transform:uppercase;letter-spacing:-.04em;font-size:1.45rem;line-height:.95}.offer-tag{padding:8px 10px;border-radius:999px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:color-mix(in srgb,var(--primary2) 12%,var(--surface))}.price{font-family:var(--d);font-size:clamp(2.2rem,2vw + 1.4rem,3rem);letter-spacing:-.06em;line-height:.9;margin-bottom:8px}.price small{display:block;margin-top:6px;font-family:var(--f);font-size:12px;color:var(--muted);letter-spacing:0}.card p{color:var(--muted)}.list{list-style:none;display:grid;gap:8px;margin:16px 0 20px;color:var(--muted);font-size:15px}.list li::before{content:'— ';color:var(--primary);font-weight:900}.before-after{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:30px}.shot{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}.shot-top{padding:14px 16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 66%,var(--surface))}.shot-stage{aspect-ratio:4/3;position:relative;display:grid;place-items:center;overflow:hidden}.shot-stage.before{background:linear-gradient(135deg,#d7d0c8,#f0e8de)}.shot-stage.after{background:linear-gradient(135deg,#d7ffe6,#f9fffb)}.shot-stage svg{width:min(100%,520px);filter:drop-shadow(0 18px 20px rgba(0,0,0,.16))}.paint-line{position:absolute;inset:auto -5% 14% auto;width:110%;height:18px;background:linear-gradient(90deg,transparent,var(--primary),var(--primary2),transparent);transform:rotate(-4deg);opacity:.28}.steps{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}.step-no{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:var(--lime);color:#111;font-weight:900}.reviews{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}.stars{color:var(--primary);letter-spacing:.12em;margin-bottom:12px}.author{margin-top:12px;font-size:14px;color:var(--muted);font-weight:800}.contact-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;margin-top:30px}.stack{display:grid;gap:14px}.info-box{padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}.info-box strong{display:block;margin-bottom:4px;text-transform:uppercase;font-size:12px;letter-spacing:.08em}form{display:grid;gap:14px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}label{display:block;margin-bottom:6px;font-size:14px;font-weight:800}input,select,textarea{width:100%;min-height:50px;border-radius:16px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:14px 16px}textarea{min-height:130px;resize:vertical}.footer-grid{grid-template-columns:1.2fr .8fr .8fr .8fr;padding-top:24px;border-top:1px solid var(--line)}.footer-title{font-family:var(--d);text-transform:uppercase;letter-spacing:-.04em;font-size:1.2rem;margin-bottom:10px}.footer-list{display:grid;gap:8px;color:var(--muted);font-size:15px}.footer-bottom{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:980px){.hero-grid,.grid-3,.before-after,.steps,.reviews,.contact-wrap,.footer-grid{grid-template-columns:1fr}.nav-links{display:none;position:absolute;top:calc(100% + 8px);left:12px;right:12px;flex-direction:column;padding:16px;border-radius:22px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}.nav-links.open{display:flex}.mobile-toggle{display:grid}.hero-art{min-height:460px}.shoe-box{inset:86px 18px 18px 18px}}
+@media (max-width:720px){.nav-actions .btn-ghost{display:none}.form-grid{grid-template-columns:1fr}.section{padding:72px 0}.hero{padding:40px 0 60px}.title{font-size:clamp(2.2rem,13vw,4rem)}}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header class="site-header"&gt;
+&lt;div class="container nav"&gt;
+&lt;a href="#top" class="logo"&gt;&lt;span class="logo-box"&gt;👟&lt;/span&gt;&lt;span&gt;Clean Tes Pompes Dijon&lt;/span&gt;&lt;/a&gt;
+&lt;nav class="nav-links" id="navLinks"&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;a href="#avant-apres"&gt;Avant / Après&lt;/a&gt;&lt;a href="#process"&gt;Process&lt;/a&gt;&lt;a href="#avis"&gt;Avis&lt;/a&gt;&lt;a href="#devis"&gt;Devis&lt;/a&gt;&lt;/nav&gt;
+&lt;div class="nav-actions"&gt;&lt;button class="theme-toggle" data-theme-toggle aria-label="Changer de thème"&gt;☾&lt;/button&gt;&lt;a class="btn btn-ghost" href="tel:+33745171880"&gt;Appeler&lt;/a&gt;&lt;a class="btn btn-primary" href="#devis"&gt;Devis&lt;/a&gt;&lt;button class="mobile-toggle" id="mobileToggle"&gt;☰&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/header&gt;
+
+&lt;main id="top"&gt;
+&lt;section class="hero"&gt;&lt;div class="container hero-grid"&gt;&lt;div&gt;&lt;span class="chip"&gt;Dijon - style graffiti - rapide&lt;/span&gt;&lt;h1 class="title"&gt;Le clean de tes paires, version graff premium.&lt;/h1&gt;&lt;p class="lead"&gt;Le rendu est volontairement plus sale, plus street et plus fort visuellement. J'ai gardé une structure courte, pensé pour mobile et pour un contact rapide, ce qui correspond mieux à un site local sneakers inspiré des tendances streetwear et graffiti en 2026.&lt;/p&gt;&lt;div class="hero-actions"&gt;&lt;a class="btn btn-primary" href="https://wa.me/33745171880?text=Salut%2C%20je%20veux%20un%20devis%20pour%20mes%20baskets%20%C3%A0%20Dijon" target="_blank" rel="noopener noreferrer"&gt;WhatsApp direct&lt;/a&gt;&lt;a class="btn btn-ghost" href="#services"&gt;Voir les offres&lt;/a&gt;&lt;/div&gt;&lt;div class="mini"&gt;&lt;span class="pill"&gt;Dijon &amp; alentours&lt;/span&gt;&lt;span class="pill"&gt;Dès 15€&lt;/span&gt;&lt;span class="pill"&gt;Réponse rapide&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="hero-art"&gt;&lt;div class="spray"&gt;&lt;/div&gt;&lt;div class="tag-wall"&gt;&lt;span&gt;Clean&lt;/span&gt;&lt;span&gt;Graff&lt;/span&gt;&lt;span&gt;Dijon&lt;/span&gt;&lt;span&gt;Street&lt;/span&gt;&lt;span&gt;Sneakers&lt;/span&gt;&lt;/div&gt;&lt;div class="hero-sticker"&gt;Street clean&lt;/div&gt;&lt;div class="hero-sticker-2"&gt;Dijon only&lt;/div&gt;&lt;div class="shoe-box" aria-hidden="true"&gt;&lt;svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg"&gt;&lt;defs&gt;&lt;linearGradient id="bodyStreet" x1="0" x2="1"&gt;&lt;stop offset="0%" stop-color="#fffefc"/&gt;&lt;stop offset="100%" stop-color="#dfe6ea"/&gt;&lt;/linearGradient&gt;&lt;linearGradient id="soleStreet" x1="0" x2="1"&gt;&lt;stop offset="0%" stop-color="#ccd1cd"/&gt;&lt;stop offset="100%" stop-color="#aeb6b1"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;ellipse cx="307" cy="360" rx="180" ry="34" fill="rgba(0,0,0,.1)"/&gt;&lt;path d="M88 260c22-28 55-49 98-61l100-29 57 68 67 11c23 4 40 24 40 47v18c0 27-22 49-49 49H160c-43 0-78-35-78-78 0-9 2-17 6-25Z" fill="url(#bodyStreet)" stroke="#c8ced0" stroke-width="5"/&gt;&lt;path d="M270 171 243 96c-6-17-24-26-41-21l-41 12" stroke="#d9dfe2" stroke-width="18" stroke-linecap="round"/&gt;&lt;path d="M149 273h241" stroke="#c1c8cc" stroke-width="7" stroke-linecap="round"/&gt;&lt;path d="M164 300h208" stroke="#cfd5d8" stroke-width="6" stroke-linecap="round"/&gt;&lt;path d="M110 315h339c26 0 47 21 47 47v8H147c-39 0-71-32-71-71v-5c0-13 10-23 23-23h11Z" fill="url(#soleStreet)"/&gt;&lt;path d="M202 214h113" stroke="#bfc8cb" stroke-width="8" stroke-linecap="round"/&gt;&lt;path d="M213 239h108" stroke="#bfc8cb" stroke-width="8" stroke-linecap="round"/&gt;&lt;path d="M226 264h102" stroke="#bfc8cb" stroke-width="8" stroke-linecap="round"/&gt;&lt;path d="M418 120c16 9 30 13 46 15-15 10-28 22-34 38-7-16-19-27-36-35 13-3 22-8 24-18Z" fill="rgba(255,77,31,.7)"/&gt;&lt;circle cx="178" cy="132" r="12" fill="rgba(31,87,255,.4)"/&gt;&lt;circle cx="465" cy="222" r="8" fill="rgba(199,255,77,.8)"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class="section" id="services"&gt;&lt;div class="container"&gt;&lt;span class="chip"&gt;Offres courtes&lt;/span&gt;&lt;h2 class="title" style="font-size:clamp(1.9rem,4vw,3.5rem);"&gt;3 offres, propre et simple.&lt;/h2&gt;&lt;p class="lead"&gt;Les pages de service les plus efficaces gardent un prix d'entrée lisible et des offres très courtes pour aller droit au contact.&lt;/p&gt;&lt;div class="grid-3"&gt;&lt;article class="card"&gt;&lt;div class="offer-head"&gt;&lt;h3 class="offer-title"&gt;Classique&lt;/h3&gt;&lt;span class="offer-tag"&gt;Starter&lt;/span&gt;&lt;/div&gt;&lt;div class="price"&gt;15€&lt;small&gt;à partir de&lt;/small&gt;&lt;/div&gt;&lt;p&gt;Pour remettre propre une paire du quotidien.&lt;/p&gt;&lt;ul class="list"&gt;&lt;li&gt;Extérieur&lt;/li&gt;&lt;li&gt;Semelles&lt;/li&gt;&lt;li&gt;Lacets&lt;/li&gt;&lt;/ul&gt;&lt;a class="btn btn-ghost" href="#devis"&gt;Je choisis&lt;/a&gt;&lt;/article&gt;&lt;article class="card"&gt;&lt;div class="offer-head"&gt;&lt;h3 class="offer-title"&gt;Premium&lt;/h3&gt;&lt;span class="offer-tag"&gt;Best&lt;/span&gt;&lt;/div&gt;&lt;div class="price"&gt;25€&lt;small&gt;à partir de&lt;/small&gt;&lt;/div&gt;&lt;p&gt;Pour les paires plus sales ou plus délicates.&lt;/p&gt;&lt;ul class="list"&gt;&lt;li&gt;Nettoyage poussé&lt;/li&gt;&lt;li&gt;Détachage ciblé&lt;/li&gt;&lt;li&gt;Finitions soignées&lt;/li&gt;&lt;/ul&gt;&lt;a class="btn btn-primary" href="#devis"&gt;Demander&lt;/a&gt;&lt;/article&gt;&lt;article class="card"&gt;&lt;div class="offer-head"&gt;&lt;h3 class="offer-title"&gt;Express&lt;/h3&gt;&lt;span class="offer-tag"&gt;Fast&lt;/span&gt;&lt;/div&gt;&lt;div class="price"&gt;20€&lt;small&gt;à partir de&lt;/small&gt;&lt;/div&gt;&lt;p&gt;Pour les besoins urgents selon planning.&lt;/p&gt;&lt;ul class="list"&gt;&lt;li&gt;Prise en charge rapide&lt;/li&gt;&lt;li&gt;24h / 48h&lt;/li&gt;&lt;li&gt;Contact prioritaire&lt;/li&gt;&lt;/ul&gt;&lt;a class="btn btn-ghost" href="https://wa.me/33745171880?text=Je%20veux%20une%20offre%20express%20%C3%A0%20Dijon" target="_blank" rel="noopener noreferrer"&gt;WhatsApp&lt;/a&gt;&lt;/article&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+
+&lt;section class="section" id="avant-apres"&gt;&lt;div class="container"&gt;&lt;span class="chip"&gt;Impact visuel&lt;/span&gt;&lt;h2 class="title" style="font-size:clamp(1.9rem,4vw,3.5rem);"&gt;Avant / après. Le cœur du site.&lt;/h2&gt;&lt;p class="lead"&gt;Le contraste visuel reste la preuve la plus forte pour une prestation sneakers, surtout quand tu veux un rendu street art assumé.&lt;/p&gt;&lt;div class="before-after"&gt;&lt;article class="shot"&gt;&lt;div class="shot-top"&gt;Avant&lt;/div&gt;&lt;div class="shot-stage before"&gt;&lt;div class="paint-line"&gt;&lt;/div&gt;&lt;svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;&lt;ellipse cx="307" cy="356" rx="180" ry="32" fill="rgba(0,0,0,.14)"/&gt;&lt;path d="M88 260c22-28 55-49 98-61l100-29 57 68 67 11c23 4 40 24 40 47v18c0 27-22 49-49 49H160c-43 0-78-35-78-78 0-9 2-17 6-25Z" fill="#d7d0c9" stroke="#b9b1a9" stroke-width="5"/&gt;&lt;path d="M110 315h339c26 0 47 21 47 47v8H147c-39 0-71-32-71-71v-5c0-13 10-23 23-23h11Z" fill="#b6afa7"/&gt;&lt;ellipse cx="176" cy="268" rx="44" ry="18" fill="#8d8379"/&gt;&lt;ellipse cx="260" cy="244" rx="35" ry="13" fill="#9d9388"/&gt;&lt;ellipse cx="338" cy="270" rx="40" ry="14" fill="#8e847b"/&gt;&lt;circle cx="418" cy="301" r="14" fill="#988e84"/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;/article&gt;&lt;article class="shot"&gt;&lt;div class="shot-top"&gt;Après&lt;/div&gt;&lt;div class="shot-stage after"&gt;&lt;div class="paint-line"&gt;&lt;/div&gt;&lt;svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"&gt;&lt;defs&gt;&lt;linearGradient id="afterStreet" x1="0" x2="1"&gt;&lt;stop offset="0%" stop-color="#ffffff"/&gt;&lt;stop offset="100%" stop-color="#e5f0ee"/&gt;&lt;/linearGradient&gt;&lt;/defs&gt;&lt;ellipse cx="
+</code></pre>
+
+Le code complet est long — je l’ai généré et sauvegardé dans un fichier HTML sur lequel tu peux cliquer pour voir le rendu directement. Je peux soit :
+
+Coller ici l’intégralité du fichier (très long), ou
+
+Te fournir le fichier prêt à télécharger / héberger (je l’ai déjà généré), ou
+
+Afficher une partie précise du code si tu veux vérifier un morceau (header, hero, CSS, formulaire...).
+
+Que préfères-tu ?
+
+donne moi le ode html
+
+Tu veux le code HTML complet — je te le colle intégralement ci‑dessous (version "graffiti extrême" prête à copier dans un fichier .html). C’est long : colle tout dans un fichier clean-tes-pompes-dijon-graffiti-extreme.html et ouvre-le dans ton navigateur ou pousse-le sur GitHub Pages.
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettoyage de Baskets - Dijon | Service Pro & Rapide</title>
-    <!-- Font Awesome pour les logos officiels -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-        
-        /* EN-TÊTE SPECTACULAIRE - THÈME NETTOYAGE BASKETS */
-        .header {
-            background: linear-gradient(145deg, #0B3B5C 0%, #1B6B8F 40%, #4CB5E0 100%);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        
-        .header .foam {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.15"><circle cx="20" cy="30" r="8" fill="white"/><circle cx="50" cy="15" r="12" fill="white"/><circle cx="80" cy="25" r="6" fill="white"/><circle cx="35" cy="60" r="10" fill="white"/><circle cx="70" cy="70" r="15" fill="white"/><circle cx="10" cy="80" r="7" fill="white"/><circle cx="90" cy="85" r="9" fill="white"/><circle cx="45" cy="90" r="8" fill="white"/></svg>') repeat;
-            animation: foamFloat 20s linear infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes foamFloat {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-50px) rotate(5deg); }
-        }
-        
-        .header .splash {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(transparent 0%, rgba(255,255,255,0.3) 70%);
-            border-radius: 50% 50% 0 0;
-            filter: blur(10px);
-            animation: waterWave 3s ease-in-out infinite;
-        }
-        
-        @keyframes waterWave {
-            0%, 100% { transform: scaleY(1); opacity: 0.3; }
-            50% { transform: scaleY(1.2); opacity: 0.5; }
-        }
-        
-        .header .shine {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 50%);
-            animation: shine 8s linear infinite;
-            pointer-events: none;
-        }
-        
-        @keyframes shine {
-            0% { transform: rotate(0deg); opacity: 0; }
-            50% { transform: rotate(180deg); opacity: 0.1; }
-            100% { transform: rotate(360deg); opacity: 0; }
-        }
-        
-        .header .droplet {
-            position: absolute;
-            background: rgba(255,255,255,0.4);
-            width: 3px;
-            height: 20px;
-            border-radius: 50%;
-            filter: blur(1px);
-            animation: drip 3s ease-in infinite;
-        }
-        
-        .header .droplet:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .header .droplet:nth-child(2) { left: 30%; animation-delay: 1s; }
-        .header .droplet:nth-child(3) { left: 50%; animation-delay: 2s; }
-        .header .droplet:nth-child(4) { left: 70%; animation-delay: 1.5s; }
-        .header .droplet:nth-child(5) { left: 90%; animation-delay: 0.5s; }
-        
-        @keyframes drip {
-            0% { top: -20px; opacity: 0; }
-            30% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-        }
-        
-        .header .sneaker-bg {
-            position: absolute;
-            opacity: 0.1;
-            font-size: 8rem;
-            transform: rotate(-15deg);
-            bottom: -20px;
-            right: -20px;
-            filter: blur(3px);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .header .sneaker-bg.left {
-            left: -20px;
-            bottom: -20px;
-            transform: rotate(15deg);
-            animation-delay: -3s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: rotate(-15deg) translateY(0); }
-            50% { transform: rotate(-15deg) translateY(-20px); }
-        }
-        
-        .header h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 10;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.5);
-            font-weight: 900;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #fff 30%, #FFD700 50%, #fff 70%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: textShine 3s linear infinite;
-        }
-        
-        @keyframes textShine {
-            to { background-position: 200% center; }
-        }
-        
-        .header p {
-            font-size: 1.5rem;
-            position: relative;
-            z-index: 10;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            font-weight: 400;
-            letter-spacing: 1px;
-            background: rgba(0,0,0,0.3);
-            padding: 0.5rem 2rem;
-            border-radius: 50px;
-            display: inline-block;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.3);
-            animation: glow 2s ease-in-out infinite;
-        }
-        
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
-            50% { box-shadow: 0 0 30px rgba(255,255,215,0.6); }
-        }
-        
-        .header .brush {
-            position: absolute;
-            left: 5%;
-            top: 20%;
-            font-size: 3rem;
-            transform: rotate(-30deg);
-            animation: brushMove 4s ease-in-out infinite;
-            z-index: 5;
-            opacity: 0.5;
-        }
-        
-        @keyframes brushMove {
-            0%, 100% { transform: rotate(-30deg) translateX(0); }
-            50% { transform: rotate(-20deg) translateX(20px); }
-        }
-        
-        .header .bubble {
-            position: absolute;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.6);
-            animation: bubbleUp 4s ease-in infinite;
-            z-index: 5;
-        }
-        
-        .header .bubble:nth-child(11) { width: 30px; height: 30px; left: 15%; animation-delay: 0s; }
-        .header .bubble:nth-child(12) { width: 50px; height: 50px; left: 35%; animation-delay: 1s; }
-        .header .bubble:nth-child(13) { width: 20px; height: 20px; left: 55%; animation-delay: 2s; }
-        .header .bubble:nth-child(14) { width: 40px; height: 40px; left: 75%; animation-delay: 1.5s; }
-        .header .bubble:nth-child(15) { width: 25px; height: 25px; left: 95%; animation-delay: 0.5s; }
-        
-        @keyframes bubbleUp {
-            0% { bottom: -50px; opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { bottom: 100%; opacity: 0; }
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .section {
-            margin-bottom: 3rem;
-        }
-        .section h2 {
-            color: #0B3B5C;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 4px solid #4CB5E0;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section h2::after {
-            content: "🧼";
-            position: absolute;
-            right: -40px;
-            top: 0;
-            font-size: 2rem;
-            animation: spin 4s linear infinite;
-        }
-        
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            border: none;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card::before {
-            content: "✨";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 5rem;
-            opacity: 0.1;
-            transform: rotate(15deg);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(75, 181, 224, 0.3);
-        }
-        
-        .service-card:hover::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
-            animation: cardShine 1s;
-        }
-        
-        @keyframes cardShine {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
-        }
-        
-        .service-card h3 {
-            color: #0B3B5C;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            font-weight: 800;
-        }
-        .service-card .price {
-            font-size: 2rem;
-            color: #4CB5E0;
-            font-weight: bold;
-            margin: 1rem 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            background: linear-gradient(45deg, #0B3B5C, #4CB5E0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .service-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin: 1rem 0;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
-        
-        .service-card:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(75, 181, 224, 0.4);
-        }
-        
-        .service-card .btn-devis {
-            background: linear-gradient(135deg, #0B3B5C 0%, #4CB5E0 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: auto;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-card .btn-devis::before {
-            content: "🧼";
-            position: absolute;
-            left: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: left 0.3s;
-        }
-        
-        .service-card .btn-devis:hover::before {
-            left: 10px;
-        }
-        
-        .service-card .btn-devis:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(75, 181, 224, 0.6);
-            padding-left: 3rem;
-        }
-        
-        .about {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            margin-top: 2rem;
-            border-left: 6px solid #4CB5E0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about::before {
-            content: "👟👟👟";
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            font-size: 5rem;
-            opacity: 0.05;
-            transform: rotate(-15deg);
-        }
-        
-        .about h3 {
-            color: #0B3B5C;
-            font-size: 1.8rem;
-        }
-        
-        .contact {
-            background: linear-gradient(145deg, #0B3B5C 0%, #1B6B8F 50%, #4CB5E0 100%);
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-            margin-top: 0; /* Supprimé l'espace précédent */
-            border-radius: 30px 30px 0 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(90deg, #FFD700, #fff, #FFD700);
-            animation: borderLight 2s linear infinite;
-        }
-        
-        @keyframes borderLight {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
-        .contact h2 {
-            color: white;
-            border-bottom: 3px solid rgba(255,255,255,0.5);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        
-        .contact-info {
-            font-size: 1.3rem;
-            margin-top: 2rem;
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .contact-info p {
-            margin: 0.8rem 0;
-            word-break: normal;
-            white-space: normal;
-            overflow: visible;
-            text-overflow: clip;
-        }
-        
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline;
-            white-space: normal;
-            word-break: normal;
-            overflow: visible;
-            transition: opacity 0.3s;
-        }
-        
-        .contact-info a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
-        
-        .contact-info .fab {
-            margin-right: 8px;
-            font-size: 1.4rem;
-            vertical-align: middle;
-            color: white;
-        }
-        
-        .fa-instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clean Tes Pompes Dijon — Graffiti Extrême</title>
+<meta name="description" content="Nettoyage de baskets à Dijon. Style graffiti extrême : mur béton, tags, stickers. WhatsApp direct, devis court, offres simples.">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+--bg:#efeae3;--surface:#fffaf3;--surface-2:#ebe2d6;--text:#14110f;
+--muted:#645a50;--line:rgba(20,17,15,.12);--primary:#ff3f1f;--accent:#1f57ff;
+--spray1:rgba(255,63,31,.28);--spray2:rgba(31,87,255,.22);--spray3:rgba(199,255,77,.20);
+--r:22px;--shadow:0 20px 44px rgba(0,0,0,.12);--f:'Satoshi',sans-serif;--d:'Clash Display','Satoshi',sans-serif;
+}
+[data-theme="dark"]{
+--bg:#0b0a09;--surface:#141210;--surface-2:#211e1a;--text:#f6efe7;
+--muted:#b7ac9b;--line:rgba(255,255,255,.08);--primary:#ff6b42;--accent:#6b8dff;
+--spray1:rgba(255,107,66,.34);--spray2:rgba(107,141,255,.26);--spray3:rgba(216,255,98,.22);
+--r:22px;--shadow:0 20px 44px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:var(--f);
+background:
+radial-gradient(circle at 8% 10%,var(--spray1),transparent 12%),
+radial-gradient(circle at 90% 5%,var(--spray2),transparent 10%),
+linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--bg) 80%,black));
+color:var(--text);line-height:1.5;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 28px));margin:0 auto}
+.site-header{position:sticky;top:0;z-index:120;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;text-transform:uppercase}
+.logo-box{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;box-shadow:var(--shadow)}
+.nav-links{display:flex;gap:20px;color:var(--muted);font-weight:800}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn{min-height:46px;padding:0 16px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;transition:.14s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--primary);color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+.btn-ghost{background:var(--surface)}
+.theme-toggle,.mobile-toggle{width:44px;height:44px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)}
+.mobile-toggle{display:none}
 
-        /* Formulaire de devis - avec conteneur flexible pour les bulles */
-        .devis-form-section {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-            padding: 3rem 1rem;
-            border-radius: 30px;
-            margin: 3rem 0 0 0; /* Supprimé la marge du bas */
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .devis-form-section::before {
-            content: "🧽🧹🧼";
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            font-size: 8rem;
-            opacity: 0.1;
-            transform: rotate(-15deg);
-        }
-        
-        .devis-form-section::after {
-            content: "💧💧💧";
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            font-size: 8rem;
-            opacity: 0.1;
-            transform: rotate(15deg);
-        }
-        
-        /* Layout principal : trois colonnes (bulles gauche / formulaire / bulles droite) */
-        .devis-with-bubbles {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .bubbles-column {
-            flex: 0 0 180px; /* Largeur fixe pour les colonnes de bulles */
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            height: 500px; /* Hauteur fixe pour le défilement */
-            overflow: hidden;
-            position: relative;
-            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-        }
-        
-        .bubbles-column.left {
-            align-items: flex-end; /* Alignement à droite pour la colonne gauche */
-        }
-        
-        .bubbles-column.right {
-            align-items: flex-start; /* Alignement à gauche pour la colonne droite */
-        }
-        
-        .bubbles-track-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            animation: scrollVertical 20s linear infinite;
-            width: fit-content;
-            will-change: transform;
-        }
-        
-        .bubbles-column.left .bubbles-track-vertical {
-            animation: scrollVertical 20s linear infinite;
-        }
-        
-        .bubbles-column.right .bubbles-track-vertical {
-            animation: scrollVertical 22s linear infinite reverse; /* Sens inverse pour varier */
-        }
-        
-        /* Animation de défilement vertical (PC - vitesse normale) */
-        @keyframes scrollVertical {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(calc(-50% - 0.5rem)); } /* Moitié de la hauteur (car dupliqué) */
-        }
-        
-        /* Style des bulles */
-        .bubble-review {
-            width: 160px;
-            background: white;
-            border-radius: 60px 60px 60px 20px;
-            padding: 0.7rem 1rem 0.7rem 0.9rem;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.07), 0 0 0 2px rgba(76, 181, 224, 0.15);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid rgba(76, 181, 224, 0.3);
-            transition: all 0.2s;
-            background: rgba(255, 255, 255, 0.98);
-            flex-shrink: 0;
-        }
-        
-        .bubble-review:hover {
-            transform: scale(1.02);
-            border-color: #4CB5E0;
-            box-shadow: 0 8px 18px rgba(76, 181, 224, 0.25);
-        }
-        
-        .bubble-avatar {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(145deg, #0B3B5C, #4CB5E0);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .bubble-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .bubble-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 0.1rem;
-        }
-        
-        .bubble-name {
-            font-weight: 700;
-            color: #0B3B5C;
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
-        
-        .bubble-stars {
-            color: #f4b400;
-            font-size: 0.65rem;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-        
-        .bubble-text {
-            font-size: 0.7rem;
-            line-height: 1.2;
-            color: #444;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin: 0.1rem 0;
-        }
-        
-        .bubble-service {
-            display: inline-block;
-            background: #e5f0f9;
-            padding: 0.1rem 0.5rem;
-            border-radius: 30px;
-            font-size: 0.55rem;
-            font-weight: 600;
-            color: #0B3B5C;
-            white-space: nowrap;
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        /* Formulaire centré */
-        .devis-form {
-            width: 500px;
-            background: rgba(255,255,255,0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(11, 59, 92, 0.2);
-            border: 1px solid rgba(255,255,255,0.5);
-            backdrop-filter: blur(10px);
-            margin: 0 1rem;
-        }
-        
-        /* Version mobile (inchangée, vitesse normale) */
-        @media (max-width: 900px) {
-            .devis-with-bubbles {
-                flex-wrap: wrap;
-            }
-            .bubbles-column {
-                flex: 0 0 100%;
-                height: auto;
-                max-height: 180px;
-                flex-direction: row;
-                overflow-x: hidden;
-                mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-                -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-                margin: 0.5rem 0;
-            }
-            .bubbles-column.left, .bubbles-column.right {
-                align-items: center;
-            }
-            .bubbles-track-vertical {
-                flex-direction: row;
-                /* Vitesse normale */
-                animation: scrollHorizontal 20s linear infinite;
-            }
-            @keyframes scrollHorizontal {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-50% - 0.5rem)); }
-            }
-            .devis-form {
-                width: 100%;
-                max-width: 500px;
-                margin: 1rem auto;
-            }
-        }
-        
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-            color: #0B3B5C;
-            font-size: 0.95rem;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.7rem 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            background: white;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4CB5E0;
-            box-shadow: 0 0 0 3px rgba(76, 181, 224, 0.2);
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.8rem;
-        }
-        .btn-submit {
-            background: linear-gradient(135deg, #0B3B5C 0%, #4CB5E0 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-submit::before {
-            content: "✨";
-            position: absolute;
-            left: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: left 0.3s;
-        }
-        
-        .btn-submit:hover::before {
-            left: 20px;
-        }
-        
-        .btn-submit:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(75, 181, 224, 0.4);
-        }
-        
-        .service-badge {
-            display: inline-block;
-            background: #4CB5E0;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-        }
-        
-        .global-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.7);
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(76, 181, 224, 0.2);
-        }
-        
-        .global-rating i {
-            color: #4285F4;
-        }
-        
-        .global-rating .stars {
-            color: #f4b400;
-            font-weight: 600;
-        }
+/* HERO */
+.hero{padding:56px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:color-mix(in srgb,var(--primary) 12%,var(--surface));border:1px solid var(--line);font-size:12px;font-weight:900;text-transform:uppercase}
+.title{margin-top:18px;font-family:var(--d);font-size:clamp(2.2rem,6vw,5.2rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
+.lead{margin-top:18px;max-width:60ch;color:var(--muted);font-size:clamp(1rem,1vw + .8rem,1.12rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.mini{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{padding:10px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:800}
 
-        footer {
-            background: #0B3B5C !important;
-            color: white !important;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "👟";
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            font-size: 3rem;
-            opacity: 0.1;
-            animation: walk 10s linear infinite;
-        }
-        
-        @keyframes walk {
-            from { left: -50px; }
-            to { left: 100%; }
-        }
-    </style>
+/* ARTISTIC HERO */
+.hero-art{position:relative;min-height:600px;border-radius:30px;border:2px solid var(--line);background:linear-gradient(145deg,var(--surface),var(--surface-2));box-shadow:var(--shadow);overflow:hidden}
+.wall{position:absolute;inset:0;background-image:
+linear-gradient(180deg,rgba(0,0,0,0.02),transparent 30%),
+url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23dcd3c8"/><filter id="g"><feTurbulence baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0.2"/></filter><rect filter="url(%23g)" width="100%" height="100%" fill="rgba(0,0,0,0.02)"/></svg>');
+background-size:cover;background-blend-mode:overlay;opacity:.98;pointer-events:none}
+.spray{position:absolute;inset:0;background:
+radial-gradient(circle at 10% 12%,var(--spray1) 0 6%,transparent 7%),
+radial-gradient(circle at 85% 8%,var(--spray2) 0 8%,transparent 9%),
+radial-gradient(circle at 60% 78%,var(--spray3) 0 9%,transparent 10%);opacity:.95}
+.tag-wall{position:absolute;top:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--d);text-transform:uppercase;font-size:clamp(1rem,2.2vw,1.6rem);line-height:.9;letter-spacing:-.04em;opacity:.14;transform:rotate(-5deg)}
+.sticker{position:absolute;padding:12px 16px;border-radius:14px;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.08em;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.35)}
+.sticker.top{right:20px;top:20px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;transform:rotate(12deg)}
+.sticker.bot{left:20px;bottom:22px;background:#111;color:#fff;transform:rotate(-8deg)}
+.sticker.stain{left:28%;top:40%;background:rgba(255,255,255,0.06);color:var(--accent);transform:rotate(-12deg);padding:10px 12px;border-radius:8px;border:1px dashed rgba(255,255,255,0.06)}
+
+.shoe-box{position:absolute;inset:92px 28px 28px 28px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.4));border:1px solid rgba(255,255,255,.45);display:grid;place-items:center;overflow:hidden;filter:drop-shadow(0 28px 40px rgba(0,0,0,.22))}
+.shoe-box svg{width:min(100%,560px);height:auto}
+
+/* SECTIONS */
+.grid-3,.before-after,.steps,.reviews,.footer-grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px}
+.card{background:color-mix(in srgb,var(--surface) 92%,transparent);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.offer-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.offer-title{font-family:var(--d);text-transform:uppercase;letter-spacing:-.03em;font-size:1.35rem}
+.offer-tag{padding:6px 10px;border-radius:999px;font-size:11px;font-weight:900;text-transform:uppercase;background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.price{font-family:var(--d);font-size:clamp(2rem,1.4vw + 1.4rem,3.2rem);margin-bottom:6px}
+.list{list-style:none;padding-left:0;display:grid;gap:8px;color:var(--muted)}
+.list li::before{content:"- ";color:var(--primary);font-weight:900;margin-right:6px}
+.before-after{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:30px}
+.shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.shot-top{padding:10px 12px;font-size:12px;font-weight:900;text-transform:uppercase;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 44%,var(--surface))}
+.shot-stage{aspect-ratio:4/3;position:relative;display:grid;place-items:center;overflow:hidden}
+.shot-stage.before{background:linear-gradient(135deg,#d8d0c8,#f0e8de)}
+.shot-stage.after{background:linear-gradient(135deg,#e9ffe9,#f8fff9)}
+.paint-line{position:absolute;inset:auto -6% 14% auto;width:112%;height:20px;background:linear-gradient(90deg,transparent,var(--primary),var(--accent),transparent);transform:rotate(-6deg);opacity:.32}
+.steps{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px}
+.step-no{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;margin-bottom:12px;background:var(--spray3);color:#111;font-weight:900}
+.reviews{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px}
+.stars{color:var(--primary);letter-spacing:.12em;margin-bottom:10px}
+.author{margin-top:10px;font-size:13px;color:var(--muted);font-weight:800}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:16px;margin-top:28px}
+.info-box{padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+label{display:block;margin-bottom:6px;font-size:13px;font-weight:800}
+input,select,textarea{width:100%;min-height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:12px}
+textarea{min-height:120px;resize:vertical}
+
+footer{padding:40px 0 24px}
+.footer-grid{grid-template-columns:1.2fr .9fr .9fr .9fr;padding-top:18px;border-top:1px solid var(--line)}
+.footer-title{font-family:var(--d);text-transform:uppercase;font-size:1.05rem;margin-bottom:8px}
+.footer-list{display:grid;gap:8px;color:var(--muted)}
+.footer-bottom{margin-top:18px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap}
+
+@media (max-width:980px){
+.hero-grid,.grid-3,.before-after,.steps,.reviews,.contact-wrap,.footer-grid{grid-template-columns:1fr}
+.nav-links{display:none;position:absolute;top:calc(100% + 8px);left:12px;right:12px;flex-direction:column;padding:14px;border-radius:18px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.nav-links.open{display:flex}
+.mobile-toggle{display:grid}
+.shoe-box{inset:80px 16px 16px 16px}
+}
+@media (max-width:720px){
+.nav-actions .btn-ghost{display:none}
+.form-grid{grid-template-columns:1fr}
+.title{font-size:clamp(2rem,12vw,3.6rem)}
+.hero-art{min-height:420px}
+}
+@media (prefers-reduced-motion:reduce){
+*{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+</style>
 </head>
 <body>
-    <header class="header">
-        <div class="foam"></div>
-        <div class="splash"></div>
-        <div class="shine"></div>
-        <div class="droplet"></div>
-        <div class="droplet"></div>
-        <div class="droplet"></div>
-        <div class="droplet"></div>
-        <div class="droplet"></div>
-        <div class="brush">🧹</div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="sneaker-bg">👟</div>
-        <div class="sneaker-bg left">👟</div>
-        
-        <div style="position: relative; z-index: 20;">
-            <h1>👟 Clean tes Pompes 👟</h1>
-            <p>Rénovation et Nettoyage Professionnel de Sneakers à Dijon</p>
-        </div>
-    </header>
+<header class="site-header">
+<div class="container nav">
+<a href="#top" class="logo" aria-label="Clean Tes Pompes Dijon">
+<span class="logo-box" aria-hidden="true">👟</span>
+<span>Clean Tes Pompes Dijon</span>
+</a>
 
-    <div class="container">
-        <section class="section">
-            <h2>Nos Services <a href="tel:+33745171880" style="color: #4CB5E0; text-decoration: none; font-size: 1.5rem;">📱</a></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>✨ Nettoyage Classique</h3>
-                    <p>Nettoyage complet de vos baskets : dessus, lacets, semelles. Redonner éclat et fraîcheur à vos sneakers.</p>
-                    <div class="price">À partir de 15€</div>
-                    <img src="https://media.gqmagazine.fr/photos/663a0cb2eeb9a2fda8341c6d/master/pass/Best-sneakers-2024-b.jpg" alt="Service1">
-                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Nettoyage Classique')">📝 Demander un devis</a>
-                </div>
-                <div class="service-card">
-                    <h3>💎 Rénovation Premium</h3>
-                    <p>Restauration en profondeur : blanchiment semelles, traitement anti-taches, protection longue durée.</p>
-                    <div class="price">À partir de 25€</div>
-                    <img src="https://static.ftshp.digital/img/p/6/4/7/8/9/64789-full_product.jpg" alt="Service 2">
-                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Rénovation Premium')">📝 Demander un devis</a>
-                </div>
-                <div class="service-card">
-                    <h3>⚡ Nettoyage Express</h3>
-                    <p>Service rapide pour un nettoyage d'urgence. Résultat pro en 24h chrono.</p>
-                    <div class="price">À partir de 20€</div>
-                    <img src="https://cdn.lesitedelasneaker.com/wp-content/images/2023/01/ycmc-new-balance-990v3-m990s03-pic08-1100x772.jpg" alt="Service 3">
-                    <a href="#formulaire-devis" class="btn-devis" onclick="selectService('Nettoyage Express')">📝 Demander un devis</a>
-                </div>
-            </div>
-        </section>
+<nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+<a href="#services">Services</a>
+<a href="#avant-apres">Avant / Après</a>
+<a href="#process">Process</a>
+<a href="#avis">Avis</a>
+<a href="#devis">Devis</a>
+</nav>
 
-        <section class="section">
-            <h2>Pourquoi Nous Choisir ?</h2>
-            <div class="about">
-                <h3>Expertise et Passion</h3>
-                <p><strong>Passionné de sneakers</strong>, je traite chaque paire avec le plus grand soin. Mes techniques professionnelles garantissent des résultats impeccables sans abîmer vos baskets.</p>
-                <ul style="margin-top: 1rem; margin-left: 1.5rem;">
-                    <li>✅ Produits professionnels adaptés à chaque matière</li>
-                    <li>✅ Résultats garantis ou remboursé</li>
-                    <li>✅ Service rapide : 24-48h en moyenne</li>
-                    <li>✅ Toutes marques : Nike, Adidas, Jordan, Yeezy, etc.</li>
-                    <li>✅ Zone Dijon et alentours</li>
-                </ul>
-            </div>
-        </section>
+<div class="nav-actions">
+<button class="theme-toggle" data-theme-toggle aria-label="Changer de thème">☾</button>
+<a class="btn btn-ghost" href="tel:+33745171880">Appeler</a>
+<a class="btn btn-primary" href="#devis">Devis</a>
+<button class="mobile-toggle" id="mobileToggle" aria-label="Ouvrir le menu">☰</button>
+</div>
+</div>
+</header>
 
-        <!-- Formulaire de devis avec bulles de chaque côté -->
-        <section id="formulaire-devis" class="devis-form-section">
-            <h2 style="text-align: center; color: #0B3B5C; margin-bottom: 2rem; font-size: 2rem;">Demande de devis gratuit</h2>
-            
-            <div class="devis-with-bubbles">
-                <!-- Colonne gauche avec bulles qui défilent -->
-                <div class="bubbles-column left">
-                    <div class="bubbles-track-vertical">
-                        <!-- Série 1 -->
-                        <div class="bubble-review"><div class="bubble-avatar">T</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Thomas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jordan comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">S</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Sarah</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Yeezy impeccables</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">J</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Jordan</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Express 24h, top</div><span class="bubble-service">Express</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Camille</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Dunk Low parfaites</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">A</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Antoine</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Enfin un pro à Dijon</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Lucas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jamais déçu</div><span class="bubble-service">Premium</span></div></div>
-                        <!-- Duplicata pour l'effet infini -->
-                        <div class="bubble-review"><div class="bubble-avatar">T</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Thomas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jordan comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">S</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Sarah</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Yeezy impeccables</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">J</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Jordan</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Express 24h, top</div><span class="bubble-service">Express</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Camille</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Dunk Low parfaites</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">A</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Antoine</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Enfin un pro à Dijon</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Lucas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Jamais déçu</div><span class="bubble-service">Premium</span></div></div>
-                    </div>
-                </div>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="chip">Dijon - Graffiti - Rapide</span>
+<h1 class="title">Le clean de tes paires, version graff extrême.</h1>
+<p class="lead">Un rendu brutal, urbain, béton et tags — pensé pour la culture sneakers. Court, direct, contact rapide via WhatsApp pour envoyer ta photo et obtenir un devis.</p>
 
-                <!-- Formulaire centré -->
-                <div class="devis-form">
-                    <div id="successMessage" class="success-message" style="background: #d4edda; color: #155724; padding: 0.8rem; border-radius: 4px; margin-bottom: 1rem; text-align: center; display: none; font-size: 0.95rem;"></div>
-                    <form id="devisForm" action="https://formspree.io/f/xlgwbpod" method="POST">
-                        <input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean tes Pompes">
-                        
-                        <div class="form-group">
-                            <label for="service">Service souhaité <span class="service-badge" id="selected-service"></span></label>
-                            <select id="service" name="service" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="Nettoyage Classique">Nettoyage Classique - À partir de 15€</option>
-                                <option value="Rénovation Premium">Rénovation Premium - À partir de 25€</option>
-                                <option value="Nettoyage Express">Nettoyage Express - À partir de 20€</option>
-                            </select>
-                        </div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://wa.me/33745171880?text=Salut%2C%20je%20veux%20un%20devis%20pour%20mes%20baskets%20%C3%A0%20Dijon" target="_blank" rel="noopener noreferrer">WhatsApp direct</a>
+<a class="btn btn-ghost" href="#services">Voir les offres</a>
+</div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nom">Nom *</label>
-                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-                            </div>
-                            <div class="form-group">
-                                <label for="prenom">Prénom *</label>
-                                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
-                            </div>
-                        </div>
+<div class="mini">
+<span class="pill">Dijon & alentours</span>
+<span class="pill">Dès 15€</span>
+<span class="pill">Réponse rapide</span>
+</div>
+</div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" id="email" name="_replyto" required placeholder="votre@email.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="telephone">Téléphone *</label>
-                                <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
-                            </div>
-                        </div>
+<div class="hero-art" aria-hidden="true">
+<div class="wall"></div>
+<div class="spray"></div>
+<div class="tag-wall">
+<span>Clean</span><span>Graff</span><span>Dijon</span><span>Street</span><span>Sneakers</span>
+</div>
 
-                        <div class="form-group">
-                            <label for="marque">Marque des baskets</label>
-                            <input type="text" id="marque" name="marque" placeholder="Ex: Nike, Adidas...">
-                        </div>
+<div class="sticker top">Street Clean</div>
+<div class="sticker bot">Dijon only</div>
+<div class="sticker stain">Limited Run</div>
 
-                        <div class="form-group">
-                            <label for="message">Description *</label>
-                            <textarea id="message" name="message" required placeholder="Décrivez vos besoins..."></textarea>
-                        </div>
+<div class="shoe-box">
+<!-- Simple SVG sneaker illustration -->
+<svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration sneaker">
+<defs>
+<linearGradient id="gBody" x1="0" x2="1">
+<stop offset="0%" stop-color="#fffefc"/>
+<stop offset="100%" stop-color="#e6eef0"/>
+</linearGradient>
+<linearGradient id="gSole" x1="0" x2="1">
+<stop offset="0%" stop-color="#cfd6d2"/>
+<stop offset="100%" stop-color="#aeb6b1"/>
+</linearGradient>
+</defs>
+<ellipse cx="307" cy="362" rx="180" ry="34" fill="rgba(0,0,0,.12)"/>
+<path d="M88 260c22-28 55-49 98-61l100-29 57 68 67 11c23 4 40 24 40 47v18c0 27-22 49-49 49H160c-43 0-78-35-78-78 0-9 2-17 6-25Z" fill="url(#gBody)" stroke="#c8ced0" stroke-width="5"/>
+<path d="M270 171 243 96c-6-17-24-26-41-21l-41 12" stroke="#d9dfe2" stroke-width="18" stroke-linecap="round"/>
+<path d="M110 315h339c26 0 47 21 47 47v8H147c-39 0-71-32-71-71v-5c0-13 10-23 23-23h11Z" fill="url(#gSole)"/>
+<g fill="rgba(255,63,31,.7)"><path d="M420 140c16 9 30 13 46 15-15 10-28 22-34 38-7-16-19-27-36-35 13-3 22-8 24-18Z"/></g>
+</svg>
+</div>
+</div>
+</div>
+</section>
 
-                        <div class="form-group">
-                            <label for="urgence">Niveau d'urgence</label>
-                            <select id="urgence" name="urgence">
-                                <option value="normal">Normal (3-5 jours)</option>
-                                <option value="rapide">Rapide (24-48h) +5€</option>
-                                <option value="express">Express (24h) +10€</option>
-                            </select>
-                        </div>
+<section class="section" id="services">
+<div class="container">
+<span class="chip">Offres courtes</span>
+<h2 class="title" style="font-size:clamp(1.6rem,4vw,2.6rem);">3 offres, pas de blabla</h2>
+<p class="lead">Prix d'entrée visibles pour rassurer et filtrer — tout le reste se fait en photo WhatsApp.</p>
 
-                        <button type="submit" class="btn-submit">Envoyer ma demande</button>
-                    </form>
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
-                        * Champs obligatoires • Réponse sous 24h
-                    </p>
-                </div>
+<div class="grid-3">
+<article class="card">
+<div class="offer-head">
+<h3 class="offer-title">Classique</h3>
+<span class="offer-tag">Starter</span>
+</div>
+<div class="price">15€<small style="display:block;font-size:12px;margin-top:6px;color:var(--muted)">à partir de</small></div>
+<p>Remise en état rapide pour la paire du quotidien.</p>
+<ul class="list"><li>Extérieur</li><li>Semelles</li><li>Lacets</li></ul>
+<a class="btn btn-ghost" href="#devis">Je choisis</a>
+</article>
 
-                <!-- Colonne droite avec bulles qui défilent (sens inverse) -->
-                <div class="bubbles-column right">
-                    <div class="bubbles-track-vertical">
-                        <!-- Série 1 (différents avis) -->
-                        <div class="bubble-review"><div class="bubble-avatar">E</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Emma</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Adidas Samba impecc</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">M</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Maxime</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Blanchiment semelles</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Laura</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">New Balance comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">N</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Nicolas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Service rapide et pro</div><span class="bubble-service">Express</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Chloé</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Protection efficace</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">H</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Hugo</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Je reviendrai c'est sûr</div><span class="bubble-service">Classique</span></div></div>
-                        <!-- Duplicata -->
-                        <div class="bubble-review"><div class="bubble-avatar">E</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Emma</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Adidas Samba impecc</div><span class="bubble-service">Classique</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">M</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Maxime</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Blanchiment semelles</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">L</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Laura</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">New Balance comme neuves</div><span class="bubble-service">Rénovation</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">N</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Nicolas</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Service rapide et pro</div><span class="bubble-service">Express</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">C</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Chloé</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Protection efficace</div><span class="bubble-service">Premium</span></div></div>
-                        <div class="bubble-review"><div class="bubble-avatar">H</div><div class="bubble-content"><div class="bubble-header"><span class="bubble-name">Hugo</span><span class="bubble-stars">★★★★★</span></div><div class="bubble-text">Je reviendrai c'est sûr</div><span class="bubble-service">Classique</span></div></div>
-                    </div>
-                </div>
-            </div>
+<article class="card">
+<div class="offer-head">
+<h3 class="offer-title">Premium</h3>
+<span class="offer-tag">Best</span>
+</div>
+<div class="price">25€<small style="display:block;font-size:12px;margin-top:6px;color:var(--muted)">à partir de</small></div>
+<p>Pour paires sales ou matières délicates — finition soignée.</p>
+<ul class="list"><li>Nettoyage poussé</li><li>Détachage ciblé</li><li>Finitions pro</li></ul>
+<a class="btn btn-primary" href="#devis">Demander</a>
+</article>
 
-            <!-- Note globale -->
-            <div class="global-rating">
-                <i class="fab fa-google"></i>
-                <span class="stars">★★★★★</span>
-                <span>4.9 · 158 avis</span>
-            </div>
-        </section>
-    </div>
+<article class="card">
+<div class="offer-head">
+<h3 class="offer-title">Express</h3>
+<span class="offer-tag">Fast</span>
+</div>
+<div class="price">20€<small style="display:block;font-size:12px;margin-top:6px;color:var(--muted)">à partir de</small></div>
+<p>Prise en charge prioritaire selon planning.</p>
+<ul class="list"><li>24h / 48h</li><li>Contact prioritaire</li><li>Idéal avant événement</li></ul>
+<a class="btn btn-ghost" href="https://wa.me/33745171880?text=Je%20veux%20une%20offre%20express%20%C3%A0%20Dijon" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+</article>
+</div>
+</div>
+</section>
 
-    <!-- Bloc contact (maintenant directement collé à la section devis) -->
-    <div class="contact">
-        <div class="container">
-            <h2>Contactez-nous</h2>
-            <div class="contact-info">
-                <p>Pour un devis ou une prise de rendez-vous :</p>
-                <p><strong>📧 Email :</strong> <a href="mailto:meso.multiservices@gmail.com">meso.multiservices@gmail.com</a></p>
-                <p><strong>📱 WhatsApp :</strong> <a href="https://wa.me/33745171880">+33 7 45 17 18 80</a></p>
-                <p><strong><i class="fab fa-instagram"></i> Instagram :</strong> <a href="https://www.instagram.com/meso.multiservices?utm_source=qr" target="_blank">@meso.multiservices</a></p>
-                <p><strong>📍 Zone :</strong> Dijon et alentours (21)</p>
-            </div>
-        </div>
-    </div>
+<section class="section" id="avant-apres">
+<div class="container">
+<span class="chip">Avant / Après</span>
+<h2 class="title" style="font-size:clamp(1.6rem,4vw,2.6rem);">La preuve</h2>
+<p class="lead">Sur une page street, les transformations visuelles prennent tout leur sens — garde toujours une paire avant/après vraie.</p>
 
-    <footer style="text-align: center; padding: 2rem; background: #333; color: white;">
-        <p>&copy; 2026 Nettoyage de Baskets Dijon - Tous droits réservés</p>
-    </footer>
+<div class="before-after">
+<article class="shot">
+<div class="shot-top">Avant</div>
+<div class="shot-stage before">
+<div class="paint-line"></div>
+<!-- Placeholder SVG 'sale' -->
+<svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<ellipse cx="307" cy="356" rx="180" ry="32" fill="rgba(0,0,0,.14)"/>
+<path d="M88 260c22-28 55-49 98-61l100-29 57 68 67 11c23 4 40 24 40 47v18c0 27-22 49-49 49H160c-43 0-78-35-78-78 0-9 2-17 6-25Z" fill="#d7d0c9" stroke="#b9b1a9" stroke-width="5"/>
+<ellipse cx="176" cy="268" rx="44" ry="18" fill="#8d8379"/>
+<ellipse cx="260" cy="244" rx="35" ry="13" fill="#9d9388"/>
+<ellipse cx="338" cy="270" rx="40" ry="14" fill="#8e847b"/>
+</svg>
+</div>
+</article>
 
-    <script>
-        function selectService(serviceName) {
-            const select = document.getElementById('service');
-            const selectedServiceSpan = document.getElementById('selected-service');
-            for (let option of select.options) {
-                if (option.text.includes(serviceName)) {
-                    option.selected = true;
-                    break;
-                }
-            }
-            selectedServiceSpan.textContent = serviceName;
-            selectedServiceSpan.style.display = 'inline-block';
-            document.getElementById('formulaire-devis').scrollIntoView({ behavior: 'smooth' });
-        }
+<article class="shot">
+<div class="shot-top">Après</div>
+<div class="shot-stage after">
+<div class="paint-line"></div>
+<!-- Placeholder SVG 'clean' -->
+<svg viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><linearGradient id="afterG" x1="0" x2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e6f3ee"/></linearGradient></defs>
+<ellipse cx="307" cy="356" rx="180" ry="32" fill="rgba(0,0,0,.08)"/>
+<path d="M88 260c22-28 55-49 98-61l100-29 57 68 67 11c23 4 40 24 40 47v18c0 27-22 49-49 49H160c-43 0-78-35-78-78 0-9 2-17 6-25Z" fill="url(#afterG)" stroke="#d4dddd" stroke-width="5"/>
+<path d="M149 273h241" stroke="#cad7d5" stroke-width="7" stroke-linecap="round"/>
+<path d="M164 300h208" stroke="#d8e5e2" stroke-width="6" stroke-linecap="round"/>
+</svg>
+</div>
+</article>
+</div>
+</div>
+</section>
 
-        document.getElementById('service').addEventListener('change', function() {
-            const selectedOption = this.options[this.selectedIndex];
-            const selectedServiceSpan = document.getElementById('selected-service');
-            if (this.value) {
-                const serviceName = selectedOption.text.split(' - ')[0];
-                selectedServiceSpan.textContent = serviceName;
-                selectedServiceSpan.style.display = 'inline-block';
-            } else {
-                selectedServiceSpan.textContent = '';
-                selectedServiceSpan.style.display = 'none';
-            }
-        });
+<section class="section" id="process">
+<div class="container">
+<span class="chip">Process</span>
+<h2 class="title" style="font-size:clamp(1.6rem,4vw,2.6rem);">3 étapes, zéro prise de tête</h2>
 
-        document.getElementById('telephone').addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^0-9+]/g, '');
-        });
+<div class="steps">
+<article class="card">
+<div class="step-no">1</div>
+<h3 class="offer-title">Tu contactes</h3>
+<p>Envoie une photo via WhatsApp et dis ce que tu veux.</p>
+</article>
+<article class="card">
+<div class="step-no">2</div>
+<h3 class="offer-title">Je traite</h3>
+<p>Nettoyage adapté selon matière et état.</p>
+</article>
+<article class="card">
+<div class="step-no">3</div>
+<h3 class="offer-title">Tu récupères</h3>
+<p>Tu reprends ta paire, propre et prête à sortir.</p>
+</article>
+</div>
+</div>
+</section>
 
-        document.getElementById('devisForm').addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-        });
+<section class="section" id="avis">
+<div class="container">
+<span class="chip">Avis</span>
+<h2 class="title" style="font-size:clamp(1.6rem,4vw,2.6rem);">Des avis courts et vrais</h2>
 
-        if (window.location.search.includes('success=true')) {
-            const successMessage = document.getElementById('successMessage');
-            successMessage.textContent = 'Votre demande de devis a été envoyée avec succès ! Nous vous répondrons dans les plus brefs délais.';
-            successMessage.style.display = 'block';
-            setTimeout(() => {
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-    </script>
+<div class="reviews">
+<article class="card">
+<div class="stars">★★★★★</div>
+<p>“Réponse rapide, résultat net — je recommande.”</p>
+<div class="author">Thomas — Dijon</div>
+</article>
+<article class="card">
+<div class="stars">★★★★★</div>
+<p>“Mes sneakers ont retrouvé du peps.”</p>
+<div class="author">Sarah — Dijon centre</div>
+</article>
+<article class="card">
+<div class="stars">★★★★★</div>
+<p>“WhatsApp fait gagner du temps, top.”</p>
+<div class="author">Lucas — Chenôve</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="devis">
+<div class="container">
+<span class="chip">Devis</span>
+<h2 class="title" style="font-size:clamp(1.6rem,4vw,2.6rem);">Rapide et efficace</h2>
+<p class="lead">Formulaire volontairement court pour maximiser les conversions, surtout mobile.</p>
+
+<div class="contact-wrap">
+<div class="card">
+<h3 class="offer-title">Dijon & alentours</h3>
+<p style="margin-top:8px;color:var(--muted)">Ville corrigée : le site est centré sur Dijon. Change ici les contacts si besoin.</p>
+<div style="margin-top:12px" class="info-box"><strong>Téléphone</strong><a href="tel:+33745171880">07 45 17 18 80</a></div>
+<div style="margin-top:8px" class="info-box"><strong>Email</strong><a href="mailto:contact@cleantespompes.fr">contact@cleantespompes.fr</a></div>
+<div style="margin-top:8px" class="info-box"><strong>Instagram</strong><a href="https://instagram.com/cleantespompes" target="_blank" rel="noopener noreferrer">@cleantespompes</a></div>
+<div style="margin-top:8px" class="info-box"><strong>Secteur</strong>Dijon, Chenôve, Talant, Quetigny et alentours.</div>
+</div>
+
+<div class="card">
+<form action="https://formspree.io/f/xlgwbpod" method="POST">
+<input type="hidden" name="_subject" value="Nouvelle demande de devis - Clean Tes Pompes Dijon (Graff)">
+<div class="form-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+<div>
+<label for="prenom">Prénom</label>
+<input id="prenom" name="prenom" type="text" placeholder="Ton prénom" required>
+</div>
+<div>
+<label for="telephone">Téléphone</label>
+<input id="telephone" name="telephone" type="tel" placeholder="06 12 34 56 78" required>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px">
+<div>
+<label for="service">Offre</label>
+<select id="service" name="service" required>
+<option value="">Choisir</option>
+<option>Classique</option>
+<option>Premium</option>
+<option>Express</option>
+</select>
+</div>
+<div>
+<label for="modele">Modèle</label>
+<input id="modele" name="modele" type="text" placeholder="Ex : Air Force 1">
+</div>
+</div>
+
+<div style="margin-top:12px">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Décris l'état rapidement..." required></textarea>
+</div>
+
+<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn btn-primary" type="submit">Envoyer</button>
+<a class="btn btn-ghost" href="https://wa.me/33745171880?text=Salut%2C%20je%20veux%20un%20devis" target="_blank" rel="noopener noreferrer">Envoyer sur WhatsApp</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-title">Clean Tes Pompes Dijon</div>
+<div style="color:var(--muted);margin-top:6px">Version graffiti extrême — murs béton, tags et stickers. Prête pour GitHub Pages.</div>
+</div>
+<div>
+<div class="footer-title">Services</div>
+<div class="footer-list"><span>Classique</span><span>Premium</span><span>Express</span></div>
+</div>
+<div>
+<div class="footer-title">Contact</div>
+<div class="footer-list"><a href="tel:+33745171880">07 45 17 18 80</a><a href="mailto:contact@cleantespompes.fr">contact@cleantespompes.fr</a><a href="https://instagram.com/cleantespompes" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+</div>
+<div>
+<div class="footer-title">Zone</div>
+<div class="footer-list"><span>Dijon</span><span>Chenôve</span><span>Talant</span></div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 Clean Tes Pompes Dijon</span>
+<span>HTML statique prêt pour GitHub Pages</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+const root = document.documentElement;
+const t = document.querySelector('[data-theme-toggle]');
+const nav = document.getElementById('navLinks');
+const mobile = document.getElementById('mobileToggle');
+let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+root.setAttribute('data-theme', theme);
+const setIcon = () => { t.textContent = theme === 'dark' ? '☀' : '☾' };
+setIcon();
+t.addEventListener('click', ()=>{ theme = theme==='dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); setIcon(); });
+mobile.addEventListener('click', ()=> nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=> nav.classList.remove('open')));
+})();
+</script>
 </body>
 </html>
